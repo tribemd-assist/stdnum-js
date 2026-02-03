@@ -89,9 +89,9 @@ import * as UY from './uy';
 import * as VE from './ve';
 import * as VN from './vn';
 import * as ZA from './za';
-import { Validator } from './types';
+import type { Validator } from './types';
 
-export { Validator } from './types';
+export type { Validator } from './types';
 
 // Live an uppercase world, to prevent keyword collisions
 export const stdnum: Record<string, Record<string, Validator>> = {
