@@ -6,7 +6,9 @@
  * fiscal purposes. It consists of 9 digits: 8 base digits and 1 check digit.
  *
  * The check digit is calculated using a modulo 11 algorithm with weights
- * from 9 to 2.
+ * 8, 9, 4, 5, 6, 7, 8, 9 (left to right). The result is mapped as:
+ *   check = sum % 11
+ *   digit = '01234567891'[check]  (so 10 -> 1)
  *
  * Source:
  *     https://www.at.gov.mz/ (Autoridade Tributária de Moçambique)
@@ -22,16 +24,16 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -.');
 }
 
-function computeCheckDigit(input: string): number {
+function computeCheckDigit(input: string): string {
   // input must be 8 digits
-  const weights = [9, 8, 7, 6, 5, 4, 3, 2];
+  const weights = [8, 9, 4, 5, 6, 7, 8, 9];
   const sum = input
     .split('')
     .map((v, i) => parseInt(v, 10) * weights[i])
     .reduce((acc, v) => acc + v, 0);
 
   const remainder = sum % 11;
-  return remainder <= 1 ? 0 : 11 - remainder;
+  return '01234567891'[remainder];
 }
 
 const impl: Validator = {
@@ -49,8 +51,8 @@ const impl: Validator = {
 
   format(input: string): string {
     const [value] = clean(input);
-    const [base, dv] = strings.splitAt(value, 8);
-    return `${base}-${dv}`;
+    const compact = value.slice(0, 9);
+    return strings.splitAt(compact, 3, 6).join(' ');
   },
 
   validate(input: string): ValidateReturn {
@@ -65,19 +67,18 @@ const impl: Validator = {
       return { isValid: false, error: new exceptions.InvalidFormat() };
     }
 
-    const [base, dvStr] = strings.splitAt(value, 8);
+    const [base, dv] = strings.splitAt(value, 8);
     const expectedDv = computeCheckDigit(base);
-    const actualDv = parseInt(dvStr, 10);
 
-    if (actualDv !== expectedDv) {
+    if (dv !== expectedDv) {
       return { isValid: false, error: new exceptions.InvalidChecksum() };
     }
 
     return {
       isValid: true,
       compact: value,
-      isIndividual: true,   // NUIT can belong to individuals or companies
-      isCompany: true,      // so both flags are true
+      isIndividual: true, // NUIT can belong to individuals or companies
+      isCompany: true, // so both flags are true
     };
   },
 };
