@@ -1,6 +1,7 @@
 import * as AD from './ad';
 import * as AI from './ai';
 import * as AL from './al';
+import * as AO from './ao';
 import * as AR from './ar';
 import * as AT from './at';
 import * as AU from './au';
@@ -97,6 +98,7 @@ export type { Validator } from './types';
 export const stdnum: Record<string, Record<string, Validator>> = {
   AD,
   AL,
+  AO,
   AR,
   AT,
   AU,
@@ -191,6 +193,7 @@ export const personValidators: Record<string, Validator[]> = {
   AD: [AD.nrt],
   AI: [AI.tin],
   AL: [AL.nipt],
+  AO: [AO.nif, AO.bi],
   AR: [AR.cuit, AR.dni],
   AT: [AT.vnr],
   AU: [AU.tfn],
@@ -269,6 +272,7 @@ export const entityValidators: Record<string, Validator[]> = {
   AD: [AD.nrt],
   AI: [AI.tin],
   AL: [AL.nipt],
+  AO: [AO.nif],
   AR: [AR.cuit],
   AT: [AT.businessid, AT.tin, AT.uid],
   AU: [AU.abn, AU.acn, AU.tfn],
