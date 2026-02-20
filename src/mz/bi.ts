@@ -3,11 +3,11 @@
  *
  * The Bilhete de Identidade is the official national identity document issued
  * to Mozambican citizens aged 12 and above. The traditional paper-based BI
- * consists of 9 numeric digits. The newer biometric BI uses an alphanumeric
+ * consists of 13 digits, first 12 numeric and last a letter. The newer biometric BI uses an alphanumeric
  * format, but public validation rules (including checksums) are not officially
  * documented.
  *
- * This validator supports only the traditional 9-digit numeric format.
+ * This validator supports only 13-digit numeric format.
  *
  * Source:
  *     Serviço de Migração e Estrangeiros (SME), República de Moçambique
@@ -46,10 +46,10 @@ const impl: Validator = {
     if (error) {
       return { isValid: false, error };
     }
-    if (value.length !== 9) {
+    if (value.length !== 13) {
       return { isValid: false, error: new exceptions.InvalidLength() };
     }
-    if (!strings.isdigits(value)) {
+    if (!/^\d{12}[A-Z]$/.test(value)) {
       return { isValid: false, error: new exceptions.InvalidFormat() };
     }
 

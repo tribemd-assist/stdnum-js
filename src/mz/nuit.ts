@@ -51,8 +51,7 @@ const impl: Validator = {
 
   format(input: string): string {
     const [value] = clean(input);
-    const compact = value.slice(0, 9);
-    return strings.splitAt(compact, 3, 6).join(' ');
+    return strings.splitAt(value, 3, 6).join(' ');
   },
 
   validate(input: string): ValidateReturn {
