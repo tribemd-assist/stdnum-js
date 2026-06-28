@@ -27,6 +27,158 @@ VAT, Person and Tax identifiers.
 
 All country validators are in the "namespace" of the ISO country code.
 
+## Passport Number Validation
+
+This library now supports passport number validation for **94 countries**. Each passport validator follows the same interface as other validators and validates passport number formats based on country-specific patterns.
+
+### Quick Example
+
+```javascript
+import { stdnum } from 'stdnum';
+
+// Validate Brazilian passport
+const brazilResult = stdnum.BR.passport.validate('AB123456');
+console.log(brazilResult.isValid); // true if format is correct
+
+// Validate US passport
+const usResult = stdnum.US.passport.validate('123456789');
+console.log(usResult.isValid); // true if format is correct
+
+// Validate German passport (with checksum support)
+const germanResult = stdnum.DE.passport.validate('C01X00T47');
+console.log(germanResult.isValid); // true if format and checksum are correct
+```
+
+### Convenience API
+
+You can also use the convenience API to validate passport numbers by country code:
+
+```javascript
+import { validatePassport, formatPassport, compactPassport } from 'stdnum/passport';
+
+// Validate by country code
+const result = validatePassport('BR', 'AB123456');
+console.log(result.isValid); // true
+
+// Format by country code
+const formatted = formatPassport('US', '123456789');
+console.log(formatted); // '123456789'
+
+// Compact by country code
+const compacted = compactPassport('DE', 'C01X00T47');
+console.log(compacted); // 'C01X00T47'
+```
+
+### Supported Passport Validators
+
+The following countries have passport number validators implemented:
+
+| Country | Code | Passport Format |
+|---------|------|----------------|
+| Andorra | AD | 1 letter + 7 digits |
+| Anguilla | AI | 2 letters + 6 digits |
+| Albania | AL | 2 letters + 7 digits |
+| Angola | AO | 1-2 letters + 6 digits |
+| Argentina | AR | 3 letters + 6 digits |
+| Austria | AT | 1 letter + 7 digits |
+| Australia | AU | 1-2 letters + 7 digits |
+| Azerbaijan | AZ | 2 letters + 7 digits |
+| Bosnia and Herzegovina | BA | 9 digits |
+| Belgium | BE | 2 letters + 6 digits |
+| Bulgaria | BG | 9 digits |
+| Bolivia | BO | 2 letters + 6 digits |
+| Brazil | BR | 2 letters + 6 digits |
+| Belarus | BY | 2 letters + 6 digits |
+| Belize | BZ | 2 letters + 6 digits |
+| Canada | CA | 2 letters + 6 digits (old) or 1 letter + 6 digits + 2 letters (new) |
+| Switzerland | CH | 1 letter + 7 digits |
+| Chile | CL | 1 letter + 7 digits |
+| China | CN | G or E + 8 digits |
+| Colombia | CO | 1 letter + 6 digits |
+| Costa Rica | CR | 2 letters + 6 digits |
+| Cuba | CU | 2 letters + 6 digits |
+| Cyprus | CY | 1 letter + 6 or 8 digits |
+| Czech Republic | CZ | 8 digits |
+| Germany | DE | 9 alphanumeric characters |
+| Denmark | DK | 9 digits |
+| Dominican Republic | DO | 2 letters + 6 digits |
+| Algeria | DZ | 2 letters + 6 digits |
+| Ecuador | EC | 1 letter + 6 digits |
+| Estonia | EE | 1-2 letters + 7 digits |
+| Egypt | EG | 2 letters + 7 digits |
+| Spain | ES | 2-3 alphanumeric + 6 digits |
+| Finland | FI | 2 letters + 7 digits |
+| Faroe Islands | FO | 2 letters + 6 digits |
+| France | FR | 2 digits + 2 letters + 5 digits |
+| United Kingdom | GB | 9 digits |
+| Ghana | GH | 2 letters + 6 digits |
+| Guinea | GN | 2 letters + 6 digits |
+| Greece | GR | 2 letters + 7 digits |
+| Guatemala | GT | 2 letters + 6 digits |
+| Hong Kong | HK | 2 letters + 6 digits |
+| Croatia | HR | 9 digits |
+| Hungary | HU | 2 letters + 6-7 digits |
+| Indonesia | ID | 2 letters + 6 digits |
+| Ireland | IE | 2 alphanumeric + 7 digits |
+| Israel | IL | 2 letters + 7 digits |
+| India | IN | 1 letter + 7 digits (old) or 2 letters + 6 digits (new ePassport) |
+| Iceland | IS | A + 7 digits |
+| Italy | IT | 2 alphanumeric + 7 digits |
+| Japan | JP | 2 letters + 7 digits |
+| Kenya | KE | 2 letters + 6 digits |
+| South Korea | KR | M or S + 8 digits |
+| Liechtenstein | LI | 1 letter + 5 digits |
+| Sri Lanka | LK | 2 letters + 6 digits |
+| Lithuania | LT | 8 alphanumeric |
+| Luxembourg | LU | 8 alphanumeric |
+| Latvia | LV | 2 alphanumeric + 7 digits |
+| Morocco | MA | 2 letters + 6 digits |
+| Monaco | MC | 2 letters + 6 digits |
+| Moldova | MD | 2 letters + 6 digits |
+| Montenegro | ME | 9 digits |
+| North Macedonia | MK | 9 digits |
+| Malta | MT | 7 digits |
+| Mauritius | MU | 2 letters + 6 digits |
+| Mexico | MX | 1 letter + 8 digits |
+| Malaysia | MY | 1 letter + 8 digits |
+| Mozambique | MZ | 2 letters + 6 digits |
+| Netherlands | NL | 2 letters + 6 alphanumeric + 1 digit |
+| Norway | NO | 8 digits |
+| New Zealand | NZ | 2 letters + 6 digits |
+| Peru | PE | 2 letters + 6 digits |
+| Pakistan | PK | 2 letters + 6 digits |
+| Poland | PL | 2 letters + 7 digits |
+| Portugal | PT | 1 letter + 6 digits |
+| Paraguay | PY | 2 letters + 6 digits |
+| Romania | RO | 8-9 digits |
+| Serbia | RS | 9 digits |
+| Russia | RU | 2 letters + 6 digits |
+| Sweden | SE | 8 digits |
+| Singapore | SG | 2 letters + 6 digits |
+| Slovenia | SI | P + 1 letter + 7 digits |
+| Slovakia | SK | 1 alphanumeric + 7 digits |
+| San Marino | SM | 2 letters + 6 digits |
+| El Salvador | SV | 2 letters + 6 digits |
+| Thailand | TH | 2 letters + 6 digits |
+| Tunisia | TN | 2 letters + 6 digits |
+| Turkey | TR | 1 letter + 8 digits |
+| Taiwan | TW | 2 letters + 6 digits |
+| Ukraine | UA | 2 letters + 6 digits |
+| United States | US | 9 digits (old) or 1 letter + 8 digits (Next Generation) |
+| Uruguay | UY | 2 letters + 6 digits |
+| Venezuela | VE | 2 letters + 6 digits |
+| Vietnam | VN | 2 letters + 6 digits |
+| South Africa | ZA | 2 letters + 6 digits |
+
+*Note: Germany includes checksum validation for machine-readable passport formats. Additional checksum validation can be added for other countries as documentation becomes available.*
+
+**Multiple Format Support:**
+Some countries have transitioned to new passport formats while old formats remain valid during transition periods. The validators support both formats:
+
+- **United States**: Old format (9 digits) and Next Generation format (1 letter + 8 digits)
+- **Canada**: Old format (2 letters + 6 digits) and new format (1 letter + 6 digits + 2 letters)  
+- **India**: Old format (1 letter + 7 digits) and new ePassport format (2 letters + 6 digits)
+
 ## Supported Countries and Numbers
 
 How you can help! This library currently support about half the countries in the world. It would be great if we can get to 100%. Submit an issue with any reference documentation and I'll do my best to integrate it, bonus points if you can get detailed descriptions of checksums or other validation criteria.

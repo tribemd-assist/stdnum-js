@@ -64,6 +64,7 @@ import * as MU from './mu';
 import * as MX from './mx';
 import * as MY from './my';
 import * as MZ from './mz';
+import * as NG from './ng';
 import * as NL from './nl';
 import * as NO from './no';
 import * as NZ from './nz';
@@ -162,6 +163,7 @@ export const stdnum: Record<string, Record<string, Validator>> = {
   MX,
   MY,
   MZ,
+  NG,
   NL,
   NO,
   NZ,
@@ -245,6 +247,7 @@ export const personValidators: Record<string, Validator[]> = {
   MX: [MX.curp, MX.rfc],
   MY: [MY.nric],
   MZ: [MZ.bi, MZ.nuit],
+  NG: [NG.nid],
   NL: [NL.onderwijsnummer, NL.bsn],
   NO: [NO.fodselsnummer],
   NZ: [NZ.ird],
