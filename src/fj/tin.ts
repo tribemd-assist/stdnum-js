@@ -1,11 +1,13 @@
 /**
- * Tax Registration Number (TRN).
- *
+ * TIN (Taxpayer Identification Number).
  *
  * Source
- *   nid number format for JM
+ *   https://frcs.org.fj/wp-content/uploads/2025/05/Brochure-Taxpayer-Identification-Number-TIN-April-2025.pdf
+ *   https://frcs.org.fj/our-services/taxation-section/individuals/registrations/
+ *   https://taxdo.com/resources/global-tax-id-validation-guide/fiji
+ *   https://tin-check.com/en/fiji/
  *
- * PERSON
+ * PERSON / ENTITY
  */
 
 import * as exceptions from '../exceptions';
@@ -16,12 +18,12 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^\d{9}$/;
+const idRegexp = /^\d{9,10}$/;
 
 const impl: Validator = {
-  name: 'Tax Registration Number',
-  localName: 'TRN',
-  abbreviation: 'NID',
+  name: 'Taxpayer Identification Number',
+  localName: 'Taxpayer Identification Number',
+  abbreviation: 'TIN',
 
   compact(input: string): string {
     const [value, err] = clean(input);
@@ -55,7 +57,7 @@ const impl: Validator = {
       isValid: true,
       compact: value,
       isIndividual: true,
-      isCompany: false,
+      isCompany: true,
     };
   },
 };

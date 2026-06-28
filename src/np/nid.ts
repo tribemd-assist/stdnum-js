@@ -1,9 +1,11 @@
 /**
- * National ID Number (राष्ट्रिय परिचय पत्र).
- *
+ * NIN (National Identification Number).
  *
  * Source
- *   nid number format for NP
+ *   https://en.wikipedia.org/wiki/National_Identity_Card_(Nepal)
+ *   https://donidcr.gov.np/
+ *   https://www.nepalitelecom.com/national-id-card
+ *   https://notarynepal.com/blog/national-id-registration-in-nepal
  *
  * PERSON
  */
@@ -19,9 +21,9 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
 const idRegexp = /^\d{10}$/;
 
 const impl: Validator = {
-  name: 'National ID Number',
-  localName: 'राष्ट्रिय परिचय पत्र',
-  abbreviation: 'NID',
+  name: 'National Identification Number',
+  localName: 'राष्ट्रिय परिचयपत्र नम्बर (Rastriya Parichaya Patra Number)',
+  abbreviation: 'NIN',
 
   compact(input: string): string {
     const [value, err] = clean(input);

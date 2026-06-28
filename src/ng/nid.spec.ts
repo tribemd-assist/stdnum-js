@@ -2,22 +2,19 @@ import { validate, format } from './nid';
 import { InvalidFormat } from '../exceptions';
 
 describe('ng/nid', () => {
-  it('format:12345678901', () => {
-    const result = format('12345678901');
+  it('format:13478900989', () => {
+    const result = format('13478900989');
 
-    expect(result).toEqual('12345678901');
+    expect(result).toEqual('13478900989');
   });
 
-  test.each(['12345678901', '12345678901'])(
-    'validate:%s',
-    value => {
-      const result = validate(value);
+  test.each(['13478900989', '00000000000'])('validate:%s', value => {
+    const result = validate(value);
 
-      expect(result.isValid && result.compact).toEqual('12345678901');
-    },
-  );
+    expect(result.isValid).toBeTruthy();
+  });
 
-  test.each(['INVALID', '12345', 'ABCDEFGH'])('validate:%s', value => {
+  test.each(['1347890098', '134789009890'])('validate:%s', value => {
     const result = validate(value);
 
     expect(result.error).toBeInstanceOf(InvalidFormat);

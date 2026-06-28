@@ -1,9 +1,12 @@
 /**
- * National ID Number (Kebelle ID).
- *
+ * FIN (Fayda Identification Number).
  *
  * Source
- *   nid number format for ET
+ *   https://en.wikipedia.org/wiki/Fayda_ID
+ *   https://id.gov.et/
+ *   https://www.ethiotelecom.et/national-id/
+ *   https://help.unhcr.org/ethiopia/services/documentation/proof-of-registration-and-refugee-id/
+ *   https://www.worldbank.org/en/news/feature/2025/02/27/the-transformative-power-of-ethiopia-afe-digital-id-unlocking-a-better-future-for-all
  *
  * PERSON
  */
@@ -16,12 +19,12 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^\d{8}$/;
+const idRegexp = /^\d{12}$/;
 
 const impl: Validator = {
-  name: 'National ID Number',
-  localName: 'Kebelle ID',
-  abbreviation: 'NID',
+  name: 'Fayda Identification Number',
+  localName: 'ፋይዳ',
+  abbreviation: 'FIN',
 
   compact(input: string): string {
     const [value, err] = clean(input);

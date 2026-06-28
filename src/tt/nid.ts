@@ -1,11 +1,14 @@
 /**
- * National ID Number (ID Card).
- *
+ * BIR (Board of Inland Revenue Number).
  *
  * Source
- *   nid number format for TT
+ *   https://www.ird.gov.tt/BIR_number
+ *   https://www.finance.gov.tt/services/income-tax/applying-for-bir-file-and-paye-number/
+ *   https://taxdo.com/resources/global-tax-id-validation-guide/trinidad-and-tobago
+ *   https://tin-check.com/en/trinidad-and-tobago/
+ *   https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Trinidad-and-Tobago-TIN.pdf
  *
- * PERSON
+ * PERSON / ENTITY
  */
 
 import * as exceptions from '../exceptions';
@@ -16,12 +19,12 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^\d{8}$/;
+const idRegexp = /^\d{10}$/;
 
 const impl: Validator = {
-  name: 'National ID Number',
-  localName: 'ID Card',
-  abbreviation: 'NID',
+  name: 'Board of Inland Revenue Number',
+  localName: 'Board of Inland Revenue file number',
+  abbreviation: 'BIR',
 
   compact(input: string): string {
     const [value, err] = clean(input);
@@ -55,7 +58,7 @@ const impl: Validator = {
       isValid: true,
       compact: value,
       isIndividual: true,
-      isCompany: false,
+      isCompany: true,
     };
   },
 };

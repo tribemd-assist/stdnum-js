@@ -1,11 +1,14 @@
 /**
- * Tax Identification Number (TIN).
- *
+ * TIN (Tax Identification Number).
  *
  * Source
- *   tin number format for NG
+ *   https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/nigeria-tin.pdf
+ *   https://taxid.pro/docs/countries/nigeria
+ *   https://taxdo.com/resources/global-tax-id-validation-guide/nigeria
+ *   https://www.firs.gov.ng/individual-income-tax
+ *   https://apps.firs.gov.ng/tinverification/
  *
- * PERSON
+ * PERSON / ENTITY
  */
 
 import * as exceptions from '../exceptions';
@@ -20,7 +23,7 @@ const idRegexp = /^\d{10}$/;
 
 const impl: Validator = {
   name: 'Tax Identification Number',
-  localName: 'TIN',
+  localName: 'Tax Identification Number',
   abbreviation: 'TIN',
 
   compact(input: string): string {
@@ -55,7 +58,7 @@ const impl: Validator = {
       isValid: true,
       compact: value,
       isIndividual: true,
-      isCompany: false,
+      isCompany: true,
     };
   },
 };

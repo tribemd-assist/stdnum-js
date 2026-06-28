@@ -1,9 +1,11 @@
 /**
- * National ID Number (NID).
- *
+ * NID (National Identity Card Number).
  *
  * Source
- *   nid number format for BD
+ *   https://en.wikipedia.org/wiki/National_identity_card_(Bangladesh)
+ *   https://en.wikipedia.org/wiki/National_identification_number
+ *   https://bdnews24.com/bangladesh/election-commission-decides-on-10-digit-smart-nid-cards-for-bangladesh-nationals
+ *   https://www.nidw.gov.bd/
  *
  * PERSON
  */
@@ -16,11 +18,11 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^\d{10,13}$/;
+const idRegexp = /^(\d{10}|\d{13}|\d{17})$/;
 
 const impl: Validator = {
-  name: 'National ID Number',
-  localName: 'NID',
+  name: 'National Identity Card Number',
+  localName: 'জাতীয় পরিচয়পত্র (Jatiya Porichoypatra)',
   abbreviation: 'NID',
 
   compact(input: string): string {

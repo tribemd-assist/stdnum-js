@@ -1,11 +1,14 @@
 /**
- * Birth Registration Number (BRN).
- *
+ * TRN (Taxpayer Registration Number).
  *
  * Source
- *   nid number format for FJ
+ *   https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/jamaica-tin.pdf
+ *   https://www.jamaicatax.gov.jm/trn1/
+ *   https://www.jamaicatax.gov.jm/taxpayer-registration-number-trn-faq
+ *   https://taxdo.com/resources/global-tax-id-validation-guide/jamaica
+ *   https://lookuptax.com/docs/tax-identification-number/jamaica-tax-id-guide
  *
- * PERSON
+ * PERSON / ENTITY
  */
 
 import * as exceptions from '../exceptions';
@@ -16,12 +19,12 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^\d{8}$/;
+const idRegexp = /^\d{9}$/;
 
 const impl: Validator = {
-  name: 'Birth Registration Number',
-  localName: 'BRN',
-  abbreviation: 'NID',
+  name: 'Taxpayer Registration Number',
+  localName: 'Taxpayer Registration Number',
+  abbreviation: 'TRN',
 
   compact(input: string): string {
     const [value, err] = clean(input);
@@ -55,7 +58,7 @@ const impl: Validator = {
       isValid: true,
       compact: value,
       isIndividual: true,
-      isCompany: false,
+      isCompany: true,
     };
   },
 };

@@ -1,9 +1,11 @@
 /**
- * ID Number (رقم الهوية).
- *
+ * NID (National Identity Card registry/identity number).
  *
  * Source
- *   nid number format for LB
+ *   https://en.wikipedia.org/wiki/Lebanese_identity_card
+ *   https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/lebanon-tin.pdf
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/lbn/a/docs-per-category.html
+ *   https://documents1.worldbank.org/curated/en/099041124084029152/pdf/P180980-185775b1-ea26-4988-9979-2b163afb83a8.pdf
  *
  * PERSON
  */
@@ -16,10 +18,10 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^\d{9}$/;
+const idRegexp = /^\d{1,12}$/;
 
 const impl: Validator = {
-  name: 'ID Number',
+  name: 'National Identity Card registry/identity number',
   localName: 'رقم الهوية',
   abbreviation: 'NID',
 

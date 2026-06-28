@@ -1,11 +1,14 @@
 /**
- * Tax Identification Number (TIN).
- *
+ * TIN (Taxpayer Identification Number).
  *
  * Source
- *   tin number format for PH
+ *   https://orus.ph/tin-format/
+ *   https://lookuptax.com/docs/tax-identification-number/philippines-tax-id-guide
+ *   https://taxdo.com/resources/global-tax-id-validation-guide/philippines
+ *   https://github.com/arthurdejong/python-stdnum/issues/116
+ *   https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/49676
  *
- * PERSON
+ * PERSON / ENTITY
  */
 
 import * as exceptions from '../exceptions';
@@ -16,11 +19,11 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^\d{9,12}$/;
+const idRegexp = /^\d{9}(\d{3})?$/;
 
 const impl: Validator = {
-  name: 'Tax Identification Number',
-  localName: 'TIN',
+  name: 'Taxpayer Identification Number',
+  localName: 'Taxpayer Identification Number',
   abbreviation: 'TIN',
 
   compact(input: string): string {
@@ -55,7 +58,7 @@ const impl: Validator = {
       isValid: true,
       compact: value,
       isIndividual: true,
-      isCompany: false,
+      isCompany: true,
     };
   },
 };

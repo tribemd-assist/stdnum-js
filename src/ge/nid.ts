@@ -1,9 +1,13 @@
 /**
- * Personal Number (პირადი ნომერი).
- *
+ * NID (Personal Number).
  *
  * Source
- *   nid number format for GE
+ *   https://en.wikipedia.org/wiki/National_identification_number
+ *   https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/georgia-tin.pdf
+ *   https://lookuptax.com/docs/tax-identification-number/georgia-tax-id-guide
+ *   https://taxdo.com/resources/global-tax-id-validation-guide/georgia
+ *   https://www.ecoi.net/en/document/1207477.html
+ *   https://georgiaexpats.com/guides/georgian-personal-number/
  *
  * PERSON
  */

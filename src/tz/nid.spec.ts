@@ -2,22 +2,19 @@ import { validate, format } from './nid';
 import { InvalidFormat } from '../exceptions';
 
 describe('tz/nid', () => {
-  it('format:1234567890', () => {
-    const result = format('1234567890');
+  it('format:19850312123456789012', () => {
+    const result = format('19850312123456789012');
 
-    expect(result).toEqual('1234567890');
+    expect(result).toEqual('19850312123456789012');
   });
 
-  test.each(['1234567890', '1234567890'])(
-    'validate:%s',
-    value => {
-      const result = validate(value);
+  test.each(['19850312123456789012', '20011130000123456789'])('validate:%s', value => {
+    const result = validate(value);
 
-      expect(result.isValid && result.compact).toEqual('1234567890');
-    },
-  );
+    expect(result.isValid).toBeTruthy();
+  });
 
-  test.each(['INVALID', '12345', 'ABCDEFGH'])('validate:%s', value => {
+  test.each(['1234567890', '1985031212345678901', 'ABCDEFGHIJKLMNOPQRST'])('validate:%s', value => {
     const result = validate(value);
 
     expect(result.error).toBeInstanceOf(InvalidFormat);

@@ -1,9 +1,11 @@
 /**
- * National Identification Number (NIN).
- *
+ * NIN (National Identification Number).
  *
  * Source
- *   nid number format for NG
+ *   https://en.wikipedia.org/wiki/National_identification_number
+ *   https://nimc.gov.ng/
+ *   https://ncc.gov.ng/faqs/about-nin
+ *   https://nimc.gov.ng/nimc-verification-service-api
  *
  * PERSON
  */
@@ -20,8 +22,8 @@ const idRegexp = /^\d{11}$/;
 
 const impl: Validator = {
   name: 'National Identification Number',
-  localName: 'NIN',
-  abbreviation: 'NID',
+  localName: 'National Identification Number',
+  abbreviation: 'NIN',
 
   compact(input: string): string {
     const [value, err] = clean(input);
