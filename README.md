@@ -54,7 +54,7 @@ console.log(germanResult.isValid); // true if format and checksum are correct
 You can also use the convenience API to validate passport numbers by country code:
 
 ```javascript
-import { validatePassport, formatPassport, compactPassport } from 'stdnum/passport';
+import { validatePassport, formatPassport, compactPassport } from 'stdnum';
 
 // Validate by country code
 const result = validatePassport('BR', 'AB123456');

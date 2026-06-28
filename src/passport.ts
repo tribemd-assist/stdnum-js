@@ -1,8 +1,9 @@
+import * as exceptions from './exceptions';
 import { stdnum } from './index';
 import { ValidateReturn } from './types';
 
 /**
- * Validate passport numbers for any country.
+ * Validate a passport number for a given country.
  *
  * @param countryCode - ISO 3166-1 alpha-2 country code (e.g., 'BR', 'US', 'DE')
  * @param value - Passport number to validate
@@ -13,37 +14,24 @@ export function validatePassport(
   value: string,
 ): ValidateReturn {
   const country = stdnum[countryCode.toUpperCase()];
-  
-  if (!country) {
-    return {
-      isValid: false,
-      error: new Error(`Country ${countryCode} not supported`),
-    };
-  }
 
-  if (!country.passport) {
-    return {
-      isValid: false,
-      error: new Error(`Passport validation not available for ${countryCode}`),
-    };
+  if (!country || !country.passport) {
+    return { isValid: false, error: new exceptions.InvalidComponent() };
   }
 
   return country.passport.validate(value);
 }
 
 /**
- * Format passport numbers for any country.
+ * Format a passport number for a given country.
  *
  * @param countryCode - ISO 3166-1 alpha-2 country code (e.g., 'BR', 'US', 'DE')
  * @param value - Passport number to format
- * @returns Formatted passport number
+ * @returns Formatted passport number (unchanged if the country is unsupported)
  */
-export function formatPassport(
-  countryCode: string,
-  value: string,
-): string {
+export function formatPassport(countryCode: string, value: string): string {
   const country = stdnum[countryCode.toUpperCase()];
-  
+
   if (!country || !country.passport) {
     return value;
   }
@@ -52,18 +40,15 @@ export function formatPassport(
 }
 
 /**
- * Compact passport numbers for any country.
+ * Compact a passport number for a given country.
  *
  * @param countryCode - ISO 3166-1 alpha-2 country code (e.g., 'BR', 'US', 'DE')
  * @param value - Passport number to compact
- * @returns Compacted passport number
+ * @returns Compacted passport number (unchanged if the country is unsupported)
  */
-export function compactPassport(
-  countryCode: string,
-  value: string,
-): string {
+export function compactPassport(countryCode: string, value: string): string {
   const country = stdnum[countryCode.toUpperCase()];
-  
+
   if (!country || !country.passport) {
     return value;
   }
