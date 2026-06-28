@@ -2,8 +2,12 @@
  * New Zealand Passport Number (New Zealand Passport).
  *
  *
+ * Format: 2 uppercase letters followed by 6 digits. The leading two letters denote the issuance series (e.g. EA series from 2005, LA series from 2009, later L* /R* series). Example LA123456.
+ *
  * Source
- *   Passport number format for NZ
+ *   https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PII/Content/PII/PII_Examples_Passport.htm
+ *   https://en.wikipedia.org/wiki/New_Zealand_passport
+ *   https://regulaforensics.com/blog/new-zealand-ids-processing/
  *
  * PERSON
  */

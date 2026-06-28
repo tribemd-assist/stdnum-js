@@ -2,8 +2,12 @@
  * Turkish Passport Number (Türk pasaportu).
  *
  *
+ * Format: One uppercase letter followed by eight digits (e.g. U12345678). This is the standard Turkish machine-readable/biometric passport serial.
+ *
  * Source
- *   Passport number format for TR
+ *   https://en.wikipedia.org/wiki/Turkish_passport
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/tur/a/docs-per-category.html
+ *   https://www.guideconsultants.com/passports/turkey-passport/
  *
  * PERSON
  */

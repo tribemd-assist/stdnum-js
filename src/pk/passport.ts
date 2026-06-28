@@ -2,8 +2,12 @@
  * Pakistani Passport Number (پاکستانی پاسپورٹ).
  *
  *
+ * Format: Modern Pakistani machine-readable/biometric passport numbers are 9 characters: 2 letters followed by 7 digits (e.g. MRZ document number 'AB1234567'). Multiple sources confirm 2 letters + 7 digits = 9 alphanumeric characters.
+ *
  * Source
- *   Passport number format for PK
+ *   https://en.wikipedia.org/wiki/Pakistani_passport
+ *   https://www.epza.com.pk/machine-readable-passport/
+ *   https://tidytothemax.com/what-is-passport-number-pakistan/
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]{2}\d{7}$/;
 
 const impl: Validator = {
   name: 'Pakistani Passport Number',

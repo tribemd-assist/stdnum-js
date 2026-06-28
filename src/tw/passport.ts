@@ -2,8 +2,11 @@
  * Taiwanese Passport Number (中華民國護照).
  *
  *
+ * Format: Nine digits, no letters. Biometric (e-)passports issued since 2008 begin with the digit 3; non-biometric ordinary passports are nine digits without that constraint. ^\d{9}$ covers both.
+ *
  * Source
- *   Passport number format for TW
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-taiwan-passport-number
+ *   https://en.wikipedia.org/wiki/Taiwan_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^\d{9}$/;
 
 const impl: Validator = {
   name: 'Taiwanese Passport Number',

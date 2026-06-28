@@ -2,8 +2,11 @@
  * Brazilian Passport Number (Passaporte brasileiro).
  *
  *
+ * Format: Brazilian passport number: 2 uppercase letters (series identifier) followed by 6 digits, e.g. FA123456. The two letters denote the issuance series and the six digits are the sequential number within that series. This matches the current passport book format issued by the Policia Federal.
+ *
  * Source
- *   Passport number format for BR
+ *   https://en.wikipedia.org/wiki/Brazilian_passport
+ *   https://www.consilium.europa.eu/prado/en/BRA-AO-01001/index.html
  *
  * PERSON
  */

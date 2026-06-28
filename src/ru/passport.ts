@@ -2,8 +2,11 @@
  * Russian Passport Number (Российский паспорт).
  *
  *
+ * Format: Russian international (foreign-travel / zagranichny) passport number: a nine-digit number, typically written as two digits + space/hyphen + seven digits (e.g. '12 3456789'). After removing spaces/dashes it is 9 consecutive digits. No letters.
+ *
  * Source
- *   Passport number format for RU
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-russia-passport-number-international
+ *   https://en.wikipedia.org/wiki/Russian_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^\d{9}$/;
 
 const impl: Validator = {
   name: 'Russian Passport Number',

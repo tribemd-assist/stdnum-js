@@ -8,16 +8,13 @@ describe('mt/passport', () => {
     expect(result).toEqual('1234567');
   });
 
-  test.each(['1234567', '1234567', '1234567'])(
-    'validate:%s',
-    value => {
-      const result = validate(value);
+  test.each(['1234567', '0654321'])('validate:%s', value => {
+    const result = validate(value);
 
-      expect(result.isValid).toBeTruthy();
-    },
-  );
+    expect(result.isValid).toBeTruthy();
+  });
 
-  test.each(['INVALID', '123456', 'ABCDEFGH'])('validate:%s', value => {
+  test.each(['123456', 'A123456'])('validate:%s', value => {
     const result = validate(value);
 
     expect(result.error).toBeInstanceOf(InvalidFormat);

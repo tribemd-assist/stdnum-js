@@ -2,8 +2,11 @@
  * Maltese Passport Number (Passaport Malti).
  *
  *
+ * Format: Seven digits, no letters, no checksum.
+ *
  * Source
- *   Passport number format for MT
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-malta-passport-number
+ *   https://en.wikipedia.org/wiki/Maltese_passport
  *
  * PERSON
  */

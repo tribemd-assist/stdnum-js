@@ -2,8 +2,11 @@
  * Haitian Passport Number (Passeport haïtien).
  *
  *
+ * Format: Two uppercase letters (an issuing-location/series code such as RL, TA, ML) followed by six digits. Total 8 characters.
+ *
  * Source
- *   passport number format for HT
+ *   https://www.ecoi.net/en/document/1416369.html
+ *   https://en.wikipedia.org/wiki/Haitian_passport
  *
  * PERSON
  */

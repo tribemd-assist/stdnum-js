@@ -2,8 +2,12 @@
  * Turkmen Passport Number (Türkmen pasporty).
  *
  *
+ * Format: 2 letters followed by 7 digits (9 chars). Turkmenistan biometric/ICAO MRPs (issued since 2008). Composition not authoritatively documented; a search summary cited a related 'personal number' as 2 letters + 8 digits, which differs from the passport serial.
+ *
  * Source
- *   passport number format for TM
+ *   https://en.wikipedia.org/wiki/Turkmen_passport
+ *   https://www.gov.uk/government/publications/turkmenistan-knowledge-base-profile/turkmenistan-knowledge-base-profile
+ *   https://india.tmembassy.gov.tm/consular-services/biometrik-maglumatly-pasport
  *
  * PERSON
  */

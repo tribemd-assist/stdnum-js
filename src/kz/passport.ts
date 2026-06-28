@@ -2,8 +2,12 @@
  * Kazakhstani Passport Number (Қазақстан паспорты).
  *
  *
+ * Format: One letter followed by 7 or 8 digits. Modern Kazakhstani (biometric, ICAO Doc 9303) passports are widely reported to use an 'N' prefix followed by 8 digits (9 characters total, e.g. N12345678); older/other series use a letter + 7 digits.
+ *
  * Source
- *   passport number format for KZ
+ *   https://en.wikipedia.org/wiki/Kazakhstani_passport
+ *   https://www.consilium.europa.eu/prado/en/KAZ-AO-02001/index.html
+ *   https://landinfo.no/wp-content/uploads/2018/03/KazakhstanPassports-ID-cards-and.pdf
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]\d{7}$/;
+const idRegexp = /^[A-Z]\d{7,8}$/;
 
 const impl: Validator = {
   name: 'Kazakhstani Passport Number',

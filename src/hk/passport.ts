@@ -2,8 +2,11 @@
  * Hong Kong Passport Number (香港特區護照).
  *
  *
+ * Format: One or two uppercase letters, followed by six digits, ending with one or two letters or digits. Total 8 to 10 characters.
+ *
  * Source
- *   Passport number format for HK
+ *   https://en.wikipedia.org/wiki/Hong_Kong_Special_Administrative_Region_passport
+ *   https://www.immd.gov.hk/eng/residents/immigration/traveldoc/hksarpassport/characteristics.html
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]{1,2}\d{6}[A-Z0-9]{1,2}$/;
 
 const impl: Validator = {
   name: 'Hong Kong Passport Number',

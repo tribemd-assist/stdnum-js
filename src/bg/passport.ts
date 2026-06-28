@@ -2,8 +2,11 @@
  * Bulgarian Passport Number (Български паспорт).
  *
  *
+ * Format: Nine digits without spaces or delimiters (e.g. 123456789).
+ *
  * Source
- *   Passport number format for BG
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-bulgaria-passport-number
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-eu-passport-number
  *
  * PERSON
  */

@@ -2,8 +2,12 @@
  * Tajik Passport Number (Паспортии Тоҷикистон).
  *
  *
+ * Format: 9 digits (no letters). Tajikistan biometric MRPs (issued since Feb 2010). No authoritative source publishes the exact serial composition; 9 digits is a plausible but unverified pattern.
+ *
  * Source
- *   passport number format for TJ
+ *   https://en.wikipedia.org/wiki/Tajik_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Tajikistan.html
+ *   https://mfa.tj/en/berlin/consular-issues/procedure-of-obtaining-passport
  *
  * PERSON
  */

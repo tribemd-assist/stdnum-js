@@ -2,8 +2,11 @@
  * Singaporean Passport Number (Singapore Passport).
  *
  *
+ * Format: Nine alphanumeric characters: a leading letter E or K, then seven digits, then one trailing letter.
+ *
  * Source
- *   Passport number format for SG
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-singapore-passport-number
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[EK]\d{7}[A-Z]$/;
 
 const impl: Validator = {
   name: 'Singaporean Passport Number',

@@ -2,8 +2,12 @@
  * Indian Passport Number (भारतीय पासपोर्ट).
  *
  *
+ * Format: One uppercase letter followed by seven digits (e.g. K1234567). This is the standard machine-readable passport serial. Multiple sources note the first and last digits are conventionally non-zero, but this is not strictly enforced as a documented validation rule, so the regex permits any digits.
+ *
  * Source
- *   Passport number format for IN
+ *   https://thepassportagents.com/indian-passport-number-format/
+ *   https://www.geeksforgeeks.org/dsa/how-to-validate-indian-passport-number-using-regular-expression/
+ *   https://en.wikipedia.org/wiki/Indian_passport
  *   Pre-2021 and 2021 redesign: 1 letter + 7 digits
  *   New ePassport (2026+): 2 letters + 6 digits
  *
@@ -19,7 +23,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
 }
 
 // Support both old (1 letter + 7 digits) and new ePassport (2 letters + 6 digits) formats
-const idRegexp = /^[A-Z]\d{7}$|^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]\d{7}$/;
 
 const impl: Validator = {
   name: 'Indian Passport Number',

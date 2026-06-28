@@ -2,8 +2,12 @@
  * Tanzanian Passport Number (Pasipoti ya Tanzania).
  *
  *
+ * Format: Two commonly documented forms: a letter + 7 digits (older 5-year passport, e.g. A1234567) and 2 letters + 6 digits (10-year passport, e.g. AB123456). Both are 8 characters total.
+ *
  * Source
- *   passport number format for TZ
+ *   https://en.wikipedia.org/wiki/Tanzanian_passport
+ *   https://www.refworld.org/docid/57dfa00c4.html
+ *   https://knowledge.broadcom.com/external/article/159954/detect-passport-numbers-for-one-or-more.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]\d{8}$/;
+const idRegexp = /^[A-Z]\d{7}$|^[A-Z]{2}\d{6}$/;
 
 const impl: Validator = {
   name: 'Tanzanian Passport Number',

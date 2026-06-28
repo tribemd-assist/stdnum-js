@@ -2,8 +2,12 @@
  * Austrian Passport Number (Reisepass).
  *
  *
+ * Format: One letter followed by seven digits (e.g. on the data page, often printed with an optional space: 'A 1234567').
+ *
  * Source
- *   Passport number format for AT
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-austria-passport-number
+ *   https://genrocket.freshdesk.com/support/solutions/articles/19000119829-how-do-i-use-the-austriapassportnumbergen-generator-
+ *   https://en.wikipedia.org/wiki/Austrian_passport
  *
  * PERSON
  */

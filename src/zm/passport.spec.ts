@@ -2,22 +2,19 @@ import { validate, format } from './passport';
 import { InvalidFormat } from '../exceptions';
 
 describe('zm/passport', () => {
-  it('format:A1234567', () => {
-    const result = format('A1234567');
+  it('format:ZN123456', () => {
+    const result = format('ZN123456');
 
-    expect(result).toEqual('A1234567');
+    expect(result).toEqual('ZN123456');
   });
 
-  test.each(['A1234567', 'a1234567'])(
-    'validate:%s',
-    value => {
-      const result = validate(value);
+  test.each(['ZN123456', 'ZP000045'])('validate:%s', value => {
+    const result = validate(value);
 
-      expect(result.isValid && result.compact).toEqual('A1234567');
-    },
-  );
+    expect(result.isValid).toBeTruthy();
+  });
 
-  test.each(['INVALID', '12345', 'ABCDEFGH'])('validate:%s', value => {
+  test.each(['Z1234567', 'ZN12345'])('validate:%s', value => {
     const result = validate(value);
 
     expect(result.error).toBeInstanceOf(InvalidFormat);

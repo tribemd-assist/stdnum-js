@@ -2,8 +2,12 @@
  * Papua New Guinean Passport Number (Papua New Guinean passport).
  *
  *
+ * Format: No authoritative public documentation of the Papua New Guinea passport serial-number format was found. The official issuer (ICA.gov.pg) and Wikipedia refer only to a 'serial number' without specifying composition. Papua New Guinean MRPs (ICAO Doc 9303 compliant) commonly use an 8-character numeric serial, which matches the current guess, but this is unverified.
+ *
  * Source
- *   passport number format for PG
+ *   https://en.wikipedia.org/wiki/Papua_New_Guinean_passport
+ *   https://ica.gov.pg/passport/applying-for-a-png-passport
+ *   https://www.passportindex.org/passport/papua-new-guinea/
  *
  * PERSON
  */

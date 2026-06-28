@@ -2,8 +2,12 @@
  * Albanian Passport Number (Pasaportë shqiptar).
  *
  *
+ * Format: Albanian biometric passport number: two uppercase letters followed by seven digits (e.g. the serial printed in the 'Passport No.' field). No authoritative source explicitly documents the alphanumeric layout; this matches the widely-used convention and the project's current guess.
+ *
  * Source
- *   Passport number format for AL
+ *   https://en.wikipedia.org/wiki/Albanian_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Albania.html
+ *   https://www.consilium.europa.eu/prado/en/ALB-AO-02001/index.html
  *
  * PERSON
  */

@@ -2,8 +2,13 @@
  * Chilean Passport Number (Pasaporte chileno).
  *
  *
+ * Format: Chilean passport. Historically (until 2013) the passport number equaled the RUN national ID: 7-8 digits plus a check digit (0-9 or K). Modern biometric passports (since 2013) are commonly seen as an optional letter prefix followed by digits. No authoritative source publishes an exact fixed pattern, so the regex is permissive: an optional leading letter, 6-9 digits, optional trailing check char.
+ *
  * Source
- *   Passport number format for CL
+ *   https://en.wikipedia.org/wiki/Chilean_passport
+ *   https://en.wikipedia.org/wiki/Unique_National_Role
+ *   https://regulaforensics.com/blog/chile-id-card-processing/
+ *   https://www.consilium.europa.eu/prado/en/CHL-AS-01001/index.html
  *
  * PERSON
  */
@@ -16,7 +21,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]\d{7}$/;
+const idRegexp = /^[A-Z]?\d{6,9}[0-9K]?$/;
 
 const impl: Validator = {
   name: 'Chilean Passport Number',

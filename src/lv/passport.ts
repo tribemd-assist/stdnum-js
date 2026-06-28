@@ -2,8 +2,11 @@
  * Latvian Passport Number (Latvijas pase).
  *
  *
+ * Format: Two letters or digits followed by seven digits (9 characters total), no spaces or delimiters.
+ *
  * Source
- *   Passport number format for LV
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-latvia-passport-number
+ *   https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PII/Content/PII/PII_Examples_Passport.htm
  *
  * PERSON
  */

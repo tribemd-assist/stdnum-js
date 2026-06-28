@@ -2,8 +2,11 @@
  * Antiguan and Barbudan Passport Number (Antigua and Barbuda passport).
  *
  *
+ * Format: One uppercase letter followed by 6 digits (e.g. B123456). Antigua and Barbuda issues ICAO-compliant CARICOM biometric passports.
+ *
  * Source
- *   passport number format for AG
+ *   https://en.wikipedia.org/wiki/Antiguan_and_Barbudan_passport
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
  *
  * PERSON
  */

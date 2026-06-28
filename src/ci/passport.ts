@@ -2,8 +2,12 @@
  * Ivorian Passport Number (Passeport ivoirien).
  *
  *
+ * Format: Two uppercase letters followed by six digits (e.g. AB123456). This is the project's existing guess; no authoritative source confirming the passport serial format was found.
+ *
  * Source
- *   passport number format for CI
+ *   https://en.wikipedia.org/wiki/Ivorian_passport
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/civ/a/docs-per-category.html
+ *   https://ci.usembassy.gov/passports/important-passport-information/
  *
  * PERSON
  */

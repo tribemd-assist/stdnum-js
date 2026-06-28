@@ -2,8 +2,12 @@
  * Israeli Passport Number (דרכון ישראלי).
  *
  *
+ * Format: Eight numeric digits, no letters, no spaces or delimiters (modern biometric Darkon passport).
+ *
  * Source
- *   Passport number format for IL
+ *   https://en.wikipedia.org/wiki/Israeli_passport
+ *   https://www.consilium.europa.eu/prado/en/ISR-AP-03001/index.html
+ *   https://embassies.gov.il/usa/en/services/israeli-citizens/issuance-travel-documents-passport-citizens-and-residents-israel
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{7}$/;
+const idRegexp = /^\d{8}$/;
 
 const impl: Validator = {
   name: 'Israeli Passport Number',

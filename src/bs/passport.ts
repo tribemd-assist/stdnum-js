@@ -2,8 +2,12 @@
  * Bahamian Passport Number (Bahamian passport).
  *
  *
+ * Format: Bahamian passport number. Multiple secondary sources describe it as a 9-character alphanumeric number, but the exact split between letters and digits is not authoritatively documented. The current project guess (1 letter + 6 digits = 7 chars) is plausible for older books but conflicts with the repeatedly cited '9-character' figure for the modern e-passport. Widened to allow 1-2 leading letters plus 6-7 digits to cover both observed possibilities.
+ *
  * Source
- *   passport number format for BS
+ *   https://en.wikipedia.org/wiki/Bahamian_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Bahamas.html
+ *   https://www.gov.uk/government/publications/bahamas-knowledge-base-profile/bahamas-knowledge-base-profile
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]\d{6}$/;
+const idRegexp = /^[A-Z]{1,2}\d{6,7}$/;
 
 const impl: Validator = {
   name: 'Bahamian Passport Number',

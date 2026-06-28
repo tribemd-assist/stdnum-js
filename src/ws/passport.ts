@@ -2,8 +2,11 @@
  * Samoan Passport Number (Samoan passport).
  *
  *
+ * Format: Letter 'T' followed by 6 digits (e.g. T161001). The U.S. State Department reciprocity page describes Samoan passport serial ranges such as T161001-T171000 and T158501-T161000, all of form T + 6 digits.
+ *
  * Source
- *   passport number format for WS
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Samoa.html
+ *   https://en.wikipedia.org/wiki/Samoan_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[0-9]{7}$/;
+const idRegexp = /^T\d{6}$/;
 
 const impl: Validator = {
   name: 'Samoan Passport Number',

@@ -2,8 +2,11 @@
  * Portuguese Passport Number (Passaporte português).
  *
  *
+ * Format: One letter followed by six digits (e.g. A123456). No spaces or delimiters.
+ *
  * Source
- *   Passport number format for PT
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-portugal-passport-number
+ *   https://en.wikipedia.org/wiki/Portuguese_passport
  *
  * PERSON
  */

@@ -2,8 +2,12 @@
  * Ethiopian Passport Number (የኢትዮጵያ ፓስፖርት).
  *
  *
+ * Format: Letter E (optionally followed by a second letter such as P on modern e-passports) followed by 6 or 7 digits. Historically: E + 6 digits (post-1990); modern biometric e-passports commonly EP + 7 digits.
+ *
  * Source
- *   passport number format for ET
+ *   https://www.ecoi.net/en/document/1254536.html
+ *   https://en.wikipedia.org/wiki/Ethiopian_passport
+ *   https://www.consilium.europa.eu/prado/en/ETH-AD-01001/index.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^\d{7}$/;
+const idRegexp = /^E[A-Z]?\d{6,7}$/;
 
 const impl: Validator = {
   name: 'Ethiopian Passport Number',

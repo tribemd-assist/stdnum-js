@@ -2,8 +2,12 @@
  * Nepalese Passport Number (नेपाली राहदानी).
  *
  *
+ * Format: 8 numeric digits. Both the older Machine-Readable Passport (MRP) and the newer IDEMIA e-passport (issued from 17 Nov 2021) use an 8-digit serial. Older MRP serials begin 06/07/08; e-passport serials seen beginning 11 (e.g. 11919230).
+ *
  * Source
- *   passport number format for NP
+ *   https://giwmscdntwo.gov.np/media/pdf_upload/Passport%20List%2013%20Feb_1mzczns.pdf
+ *   https://en.wikipedia.org/wiki/Nepalese_passport
+ *   https://kathmandupost.com/national/2021/11/17/nepal-to-start-issuing-e-passports-from-today
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[0-9]{8}$/;
+const idRegexp = /^\d{8}$/;
 
 const impl: Validator = {
   name: 'Nepalese Passport Number',

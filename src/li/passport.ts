@@ -2,8 +2,12 @@
  * Liechtenstein Passport Number (Liechtenstein Pass).
  *
  *
+ * Format: One uppercase letter followed by 5 digits (6 characters total), e.g. R00536.
+ *
  * Source
- *   Passport number format for LI
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Liechtenstein_passport
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/lie/a/docs-per-category.html
  *
  * PERSON
  */

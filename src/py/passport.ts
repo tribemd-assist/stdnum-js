@@ -2,8 +2,12 @@
  * Paraguayan Passport Number (Pasaporte paraguayo).
  *
  *
+ * Format: Guessed: two letters followed by six digits (e.g. AB123456). NOT confirmed by any authoritative source.
+ *
  * Source
- *   Passport number format for PY
+ *   https://en.wikipedia.org/wiki/Paraguayan_passport
+ *   https://www.mre.gov.py/index.php/tramites/pasaportes
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
  *
  * PERSON
  */

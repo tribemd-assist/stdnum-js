@@ -2,8 +2,13 @@
  * Ghanaian Passport Number (Ghana Passport).
  *
  *
+ * Format: Ghana passport number is 8 characters: either one letter followed by 7 digits (X9999999), or two letters followed by 6 digits (XX999999). The leading letter denotes passport category (e.g. 'A' for ordinary citizen, 'G' on biometric series).
+ *
  * Source
- *   Passport number format for GH
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Ghanaian_passport
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/gha/a/docs-per-category.html
+ *   https://mykingsgate.co.za/info/ghana-passport-number-starting-with-a-6086/
  *
  * PERSON
  */
@@ -16,7 +21,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^([A-Z]\d{7}|[A-Z]{2}\d{6})$/;
 
 const impl: Validator = {
   name: 'Ghanaian Passport Number',

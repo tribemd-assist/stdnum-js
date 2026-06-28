@@ -2,8 +2,12 @@
  * Polish Passport Number (Polski paszport).
  *
  *
+ * Format: Polish passport (paszport) document numbers are 9 characters: 2 letters followed by 7 digits (e.g. AB1234567). The number embeds a check digit computed per ICAO standards.
+ *
  * Source
- *   Passport number format for PL
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-poland-passport-number
+ *   https://en.wikipedia.org/wiki/Polish_passport
+ *   https://trustdochub.com/en/product/polish-passport-validity/
  *
  * PERSON
  */

@@ -2,8 +2,13 @@
  * Cameroonian Passport Number (Passeport camerounais).
  *
  *
+ * Format: Cameroon biometric passport. Multiple ID-processing/MRZ references describe the document number as 9 alphanumeric characters (letters A-Z and digits), consistent with the ICAO MRP 9-character document-number field. Older numbers were often all-numeric, but the field is alphanumeric.
+ *
  * Source
- *   passport number format for CM
+ *   https://en.wikipedia.org/wiki/Cameroonian_passport
+ *   https://regulaforensics.com/blog/cameroonian-passport-processing/
+ *   https://www.refworld.org/docid/440ed6e7a.html
+ *   https://trustdochub.com/en/product/cameroonian-passport-validity/
  *
  * PERSON
  */
@@ -16,7 +21,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[0-9]{9}$/;
+const idRegexp = /^[A-Z0-9]{9}$/;
 
 const impl: Validator = {
   name: 'Cameroonian Passport Number',

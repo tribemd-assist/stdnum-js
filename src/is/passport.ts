@@ -2,8 +2,11 @@
  * Icelandic Passport Number (Íslenskt vegabref).
  *
  *
+ * Format: Guessed format: letter 'A' followed by seven digits. NOT confirmed by any authoritative source.
+ *
  * Source
- *   Passport number format for IS
+ *   https://en.wikipedia.org/wiki/Icelandic_passport
+ *   https://www.skra.is/english/people/passport-and-id-card/passport/various-information-on-passports/about-the-passport/
  *
  * PERSON
  */

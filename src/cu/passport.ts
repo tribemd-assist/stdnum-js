@@ -2,8 +2,11 @@
  * Cuban Passport Number (Pasaporte cubano).
  *
  *
+ * Format: One uppercase letter followed by six digits (format X999999), total 7 characters. Cuban passports are not ICAO/EU compliant and there is no Microsoft Purview SIT for Cuba; the letter+6-digit pattern comes from secondary identifier/passport-format references rather than a primary government source.
+ *
  * Source
- *   Passport number format for CU
+ *   https://en.wikipedia.org/wiki/Cuban_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Cuba.html
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]\d{6}$/;
 
 const impl: Validator = {
   name: 'Cuban Passport Number',

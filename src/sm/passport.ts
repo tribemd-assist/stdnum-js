@@ -2,8 +2,11 @@
  * Sammarinese Passport Number (Passaporto sammarinese).
  *
  *
+ * Format: Six digits, no letters.
+ *
  * Source
- *   Passport number format for SM
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/San_Marino_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^\d{6}$/;
 
 const impl: Validator = {
   name: 'Sammarinese Passport Number',

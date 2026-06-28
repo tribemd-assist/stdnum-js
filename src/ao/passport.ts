@@ -2,8 +2,13 @@
  * Angolan Passport Number (Passaporte angolano).
  *
  *
+ * Format: Angolan passport number: a single uppercase type-letter (N = ordinary, D = diplomatic, S = service, E = foreign nationals) followed by seven digits, e.g. N1473613.
+ *
  * Source
- *   Passport number format for AO
+ *   https://www.consilium.europa.eu/prado/en/AGO-AO-01001/index.html
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/ago/a/docs-per-category.html
+ *   https://en.wikipedia.org/wiki/Angolan_passport
+ *   https://www.ecoi.net/en/document/2095422.html
  *
  * PERSON
  */
@@ -16,7 +21,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{1,2}\d{6}$/;
+const idRegexp = /^[A-Z]\d{7}$/;
 
 const impl: Validator = {
   name: 'Angolan Passport Number',

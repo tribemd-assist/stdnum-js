@@ -2,8 +2,13 @@
  * Tunisian Passport Number (جواز سفر تونسي).
  *
  *
+ * Format: 1 letter followed by 7 digits (8 chars), e.g. X1234567. Tunisian MRP serial.
+ *
  * Source
- *   Passport number format for TN
+ *   https://en.wikipedia.org/wiki/Tunisian_passport
+ *   https://trustdochub.com/en/product/tunisian-passport-validity/
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://www.consilium.europa.eu/prado/en/TUN-AO-01001/index.html
  *
  * PERSON
  */
@@ -16,7 +21,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]\d{7}$/;
 
 const impl: Validator = {
   name: 'Tunisian Passport Number',

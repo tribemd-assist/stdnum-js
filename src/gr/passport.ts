@@ -2,8 +2,11 @@
  * Greek Passport Number (Ελληνικό διαβατήριο).
  *
  *
+ * Format: Greek passport number is two capital Latin letters followed by seven digits, no spaces or delimiters (e.g. AB1234567).
+ *
  * Source
- *   Passport number format for GR
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-greece-passport-number
+ *   https://www.passport.gov.gr/passports/SearchStolenLostPassEn/
  *
  * PERSON
  */

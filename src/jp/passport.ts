@@ -2,8 +2,12 @@
  * Japanese Passport Number (日本国旅券).
  *
  *
+ * Format: Two uppercase letters followed by seven digits (e.g. TR1234567). This is the standard machine-readable Japanese passport number.
+ *
  * Source
- *   Passport number format for JP
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-japan-passport-number
+ *   https://www.protecto.ai/blog/personal-dataset-sample-japan-passport-number-download-pii-data-examples/
+ *   https://en.wikipedia.org/wiki/Japanese_passport
  *
  * PERSON
  */

@@ -2,8 +2,11 @@
  * Romanian Passport Number (Pașaport românesc).
  *
  *
+ * Format: Eight or nine digits (e.g. 12345678 or 123456789). No spaces or delimiters.
+ *
  * Source
- *   Passport number format for RO
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-romania-passport-number
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
  *
  * PERSON
  */

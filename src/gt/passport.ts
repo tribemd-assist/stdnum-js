@@ -2,8 +2,12 @@
  * Guatemalan Passport Number (Pasaporte guatemalteco).
  *
  *
+ * Format: Guatemalan passport number is nine digits, no letters, per the ICAO standard adopted by the Guatemalan Migration Institute (IGM) in 2024 (previously 15 digits).
+ *
  * Source
- *   Passport number format for GT
+ *   https://www.copaair.com/assets/Update-in-the-numbering-of-Guatemalan-passports.pdf
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Guatemalan_passport
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^\d{9}$/;
 
 const impl: Validator = {
   name: 'Guatemalan Passport Number',

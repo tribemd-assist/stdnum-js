@@ -2,8 +2,12 @@
  * Venezuelan Passport Number (Pasaporte venezolano).
  *
  *
+ * Format: All-numeric serial, 8 or 9 digits (commonly 9 digits, e.g. 123456789).
+ *
  * Source
- *   Passport number format for VE
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Venezuelan_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Venezuela.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^\d{8,9}$/;
 
 const impl: Validator = {
   name: 'Venezuelan Passport Number',

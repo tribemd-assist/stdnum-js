@@ -2,8 +2,12 @@
  * Belarusian Passport Number (Пашпарт Беларусі).
  *
  *
+ * Format: Belarusian biometric (foreign-travel) passport serial number: 2 uppercase letters (regional series) followed by 7 digits, e.g. MP1234567, total 9 characters. The two-letter series encodes the issuing region/authority: AB (Brest), BM (Vitebsk), HB (Gomel), KH (Grodno), MP (Minsk city), MC (Minsk region), KB (Mogilev), PP (Ministry of Foreign Affairs), among others.
+ *
  * Source
- *   Passport number format for BY
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Belarus.html
+ *   https://en.wikipedia.org/wiki/Belarusian_passport
+ *   https://mfa.gov.by/en/visa/biometricheskie_dokumenty/
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]{2}\d{7}$/;
 
 const impl: Validator = {
   name: 'Belarusian Passport Number',

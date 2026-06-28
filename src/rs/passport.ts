@@ -2,8 +2,12 @@
  * Serbian Passport Number (Српски пасош).
  *
  *
+ * Format: Serbian biometric passport: the passport (serial) number is nine characters. Sources describe it as 'nine alphanumeric characters', but in practice the human-entered passport number on Serbian biometric passports is a 9-digit numeric serial. Kept numeric-only to match observed documents.
+ *
  * Source
- *   Passport number format for RS
+ *   https://en.wikipedia.org/wiki/Serbian_passport
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/srb/a/docs-per-category.html
+ *   https://www.mfa.gov.rs/en/citizens/services/travel-documents
  *
  * PERSON
  */

@@ -2,8 +2,11 @@
  * South Korean Passport Number (대한민국 여권).
  *
  *
+ * Format: Nine alphanumeric characters. Either a letter (M, S, R, O, or D) followed by eight digits; OR a letter (M, S, R, O, or D) followed by three digits, one letter, and four digits (the newer 2021 'Next-Generation' format with an embedded letter).
+ *
  * Source
- *   Passport number format for KR
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-south-korea-passport-number
+ *   https://en.namu.wiki/w/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%20%EC%97%AC%EA%B6%8C
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[MS]\d{8}$/;
+const idRegexp = /^[MSROD]\d{8}$|^[MSROD]\d{3}[A-Z]\d{4}$/;
 
 const impl: Validator = {
   name: 'South Korean Passport Number',

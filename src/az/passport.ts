@@ -2,8 +2,13 @@
  * Azerbaijani Passport Number (Azərbaycan pasportu).
  *
  *
+ * Format: Nine-character alphanumeric. Commonly one letter followed by eight digits (e.g. the MRZ document-number example X05000107), or two letters followed by seven digits (e.g. AZE/AA series for diplomatic/service).
+ *
  * Source
- *   Passport number format for AZ
+ *   https://en.wikipedia.org/wiki/Azerbaijani_passport
+ *   https://terminology.hl7.org/6.4.0/NamingSystem-passportNumNS-AZE.html
+ *   https://regulaforensics.com/blog/azerbaijani-passport-processing/
+ *   https://www.consilium.europa.eu/prado/en/AZE-AO-02002/index.html
  *
  * PERSON
  */
@@ -16,7 +21,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{7}$/;
+const idRegexp = /^[A-Z]\d{8}$|^[A-Z]{2}\d{7}$/;
 
 const impl: Validator = {
   name: 'Azerbaijani Passport Number',

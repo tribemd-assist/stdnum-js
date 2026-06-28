@@ -2,8 +2,11 @@
  * Zambian Passport Number (Zambian passport).
  *
  *
+ * Format: Two letters followed by 6 digits. Wikipedia's passport infobox gives the sample format 'ZN000000' (ZN + 6 digits).
+ *
  * Source
- *   passport number format for ZM
+ *   https://en.wikipedia.org/wiki/Zambian_passport
+ *   https://www.consilium.europa.eu/prado/en/ZMB-AD-01001/index.html
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]\d{7}$/;
+const idRegexp = /^[A-Z]{2}\d{6}$/;
 
 const impl: Validator = {
   name: 'Zambian Passport Number',

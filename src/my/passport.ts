@@ -2,8 +2,11 @@
  * Malaysian Passport Number (Pasport Malaysia).
  *
  *
+ * Format: Nine alphanumeric characters: one letter from the set A, H, or K, followed by eight digits.
+ *
  * Source
- *   Passport number format for MY
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-malaysia-passport-number
+ *   https://en.wikipedia.org/wiki/Malaysian_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]\d{8}$/;
+const idRegexp = /^[AHK]\d{8}$/;
 
 const impl: Validator = {
   name: 'Malaysian Passport Number',

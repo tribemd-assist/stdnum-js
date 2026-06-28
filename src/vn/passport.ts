@@ -2,8 +2,12 @@
  * Vietnamese Passport Number (Hộ chiếu Việt Nam).
  *
  *
+ * Format: Modern machine-readable passport: one letter prefix (e.g. B, C, N, P) followed by 7 digits (e.g. C1234567). Older serials were 9 all-numeric digits.
+ *
  * Source
- *   Passport number format for VN
+ *   https://en.wikipedia.org/wiki/Vietnamese_passport
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://giacorp.vn/en/new/what-is-passport.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^([A-Z]\d{7}|\d{9})$/;
 
 const impl: Validator = {
   name: 'Vietnamese Passport Number',

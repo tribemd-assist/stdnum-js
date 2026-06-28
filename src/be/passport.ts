@@ -2,8 +2,11 @@
  * Belgian Passport Number (Belgisch paspoort).
  *
  *
+ * Format: Two uppercase letters followed by six digits with no spaces or delimiters (e.g. EM123456).
+ *
  * Source
- *   Passport number format for BE
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-belgium-passport-number
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-eu-passport-number
  *
  * PERSON
  */

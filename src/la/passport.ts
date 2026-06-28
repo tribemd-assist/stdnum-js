@@ -2,8 +2,11 @@
  * Laotian Passport Number (ພັດທະນາລາວ).
  *
  *
+ * Format: Eight characters: one letter followed by seven digits (e.g. X9999999).
+ *
  * Source
- *   passport number format for LA
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Laotian_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[0-9]{9}$/;
+const idRegexp = /^[A-Z]\d{7}$/;
 
 const impl: Validator = {
   name: 'Laotian Passport Number',

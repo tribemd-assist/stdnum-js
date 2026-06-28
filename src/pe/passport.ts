@@ -2,8 +2,12 @@
  * Peruvian Passport Number (Pasaporte peruano).
  *
  *
+ * Format: 9 numeric digits. Peruvian electronic/biometric ordinary passports (issued since 2016) use a 9-digit numeric serial.
+ *
  * Source
- *   Passport number format for PE
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Peruvian_passport
+ *   https://www.aipassportphotos.com/blog/understanding-the-importance-of-passport-book-numbers-in-peru/
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^\d{9}$/;
 
 const impl: Validator = {
   name: 'Peruvian Passport Number',

@@ -2,8 +2,12 @@
  * Vanuatuan Passport Number (Vanuatuan passport).
  *
  *
+ * Format: Variable-length serial of 6 to 11 characters: an optional prefix of up to 4 letters followed by digits (documented template ZZZZ9999999).
+ *
  * Source
- *   passport number format for VU
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Vanuatu_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Vanuatu.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[0-9]{6}$/;
+const idRegexp = /^[A-Z]{0,4}\d{5,11}$/;
 
 const impl: Validator = {
   name: 'Vanuatuan Passport Number',

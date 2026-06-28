@@ -2,8 +2,11 @@
  * Jamaican Passport Number (Jamaican passport).
  *
  *
+ * Format: One uppercase letter followed by seven digits (e.g. A1234567). Current machine-readable / e-passports use serials beginning with 'A'; regex allows any leading uppercase letter to accommodate future series.
+ *
  * Source
- *   passport number format for JM
+ *   https://en.wikipedia.org/wiki/Jamaican_passport
+ *   https://www.embassyofjamaica.org/ja_citizens/passport_application_guidelines.pdf
  *
  * PERSON
  */

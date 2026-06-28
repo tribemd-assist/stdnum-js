@@ -2,8 +2,10 @@
  * Slovenian Passport Number (Slovenski potni list).
  *
  *
+ * Format: The letter P, followed by one uppercase letter, followed by seven digits (9 chars total).
+ *
  * Source
- *   Passport number format for SI
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-slovenia-passport-number
  *
  * PERSON
  */

@@ -2,8 +2,11 @@
  * Barbadian Passport Number (Barbadian passport).
  *
  *
+ * Format: One uppercase letter followed by six digits. NOTE: not confirmed by any authoritative source; this is the project's existing undocumented guess.
+ *
  * Source
- *   passport number format for BB
+ *   https://en.wikipedia.org/wiki/Barbados_passport
+ *   https://immigration.gov.bb/pages/Passport.aspx
  *
  * PERSON
  */

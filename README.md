@@ -29,7 +29,7 @@ All country validators are in the "namespace" of the ISO country code.
 
 ## Passport Number Validation
 
-This library now supports passport number validation for **94 countries**. Each passport validator follows the same interface as other validators and validates passport number formats based on country-specific patterns.
+This library now supports passport number validation for **136 countries**. Each passport validator follows the same interface as other validators and validates passport number formats based on country-specific patterns.
 
 ### Quick Example
 
@@ -76,99 +76,142 @@ The following countries have passport number validators implemented:
 | Country | Code | Passport Format |
 |---------|------|----------------|
 | Andorra | AD | 1 letter + 7 digits |
-| Anguilla | AI | 2 letters + 6 digits |
+| Afghanistan | AF | 1 letter + 8 digits |
+| Antigua and Barbuda | AG | 1 letter + 6 digits |
+| Anguilla | AI | pattern `^\d{9}$|^[A-Z]{2}\d{6}$` |
 | Albania | AL | 2 letters + 7 digits |
-| Angola | AO | 1-2 letters + 6 digits |
+| Armenia | AM | 2 letters + 7 digits |
+| Angola | AO | 1 letter + 7 digits |
 | Argentina | AR | 3 letters + 6 digits |
 | Austria | AT | 1 letter + 7 digits |
-| Australia | AU | 1-2 letters + 7 digits |
-| Azerbaijan | AZ | 2 letters + 7 digits |
-| Bosnia and Herzegovina | BA | 9 digits |
+| Australia | AU | pattern `^[A-Z]\d{7}$|^[A-Z]{2}\d{7}$` |
+| Azerbaijan | AZ | pattern `^[A-Z]\d{8}$|^[A-Z]{2}\d{7}$` |
+| Bosnia and Herzegovina | BA | pattern `^[A-Z]\d{8}$|^\d{9}$` |
+| Barbados | BB | 1 letter + 6 digits |
+| Bangladesh | BD | 2 letters + 7 digits |
 | Belgium | BE | 2 letters + 6 digits |
 | Bulgaria | BG | 9 digits |
-| Bolivia | BO | 2 letters + 6 digits |
+| Bolivia | BO | 6-9 alphanumerics |
 | Brazil | BR | 2 letters + 6 digits |
-| Belarus | BY | 2 letters + 6 digits |
+| Bahamas | BS | 1-2 letters + 6-7 digits |
+| Belarus | BY | 2 letters + 7 digits |
 | Belize | BZ | 2 letters + 6 digits |
-| Canada | CA | 2 letters + 6 digits (old) or 1 letter + 6 digits + 2 letters (new) |
-| Switzerland | CH | 1 letter + 7 digits |
-| Chile | CL | 1 letter + 7 digits |
-| China | CN | G or E + 8 digits |
-| Colombia | CO | 1 letter + 6 digits |
+| Canada | CA | pattern `^[A-Z]{2}\d{6}$|^[A-Z]\d{6}[A-Z]{2}$` |
+| Switzerland | CH | pattern `^[A-Z][0-9A-Z]{7}$` |
+| Côte d'Ivoire | CI | 2 letters + 6 digits |
+| Chile | CL | pattern `^[A-Z]?\d{6,9}[0-9K]?$` |
+| Cameroon | CM | 9 alphanumerics |
+| China | CN | pattern `^(?:[GP]\d{8}|E[A-HJ-NP-Z]?\d{7,8})$` |
+| Colombia | CO | 9 alphanumerics |
 | Costa Rica | CR | 2 letters + 6 digits |
-| Cuba | CU | 2 letters + 6 digits |
-| Cyprus | CY | 1 letter + 6 or 8 digits |
+| Cuba | CU | 1 letter + 6 digits |
+| Cyprus | CY | 1 letter + 6-8 digits |
 | Czech Republic | CZ | 8 digits |
-| Germany | DE | 9 alphanumeric characters |
+| Germany | DE | 9 alphanumeric characters (with MRZ checksum) |
 | Denmark | DK | 9 digits |
-| Dominican Republic | DO | 2 letters + 6 digits |
-| Algeria | DZ | 2 letters + 6 digits |
-| Ecuador | EC | 1 letter + 6 digits |
-| Estonia | EE | 1-2 letters + 7 digits |
-| Egypt | EG | 2 letters + 7 digits |
-| Spain | ES | 2-3 alphanumeric + 6 digits |
+| Dominica | DM | pattern `^[A-Z]\d{7}$|^[A-Z]{2}\d{7}$` |
+| Dominican Republic | DO | 2 letters + 7 digits |
+| Algeria | DZ | 9 digits |
+| Ecuador | EC | 9 alphanumerics |
+| Estonia | EE | 1 letter + 7 digits |
+| Egypt | EG | 1 letter + 8 digits |
+| Spain | ES | pattern `^[A-Z0-9]{2}[A-Z0-9]?\d{6}$` |
+| Ethiopia | ET | pattern `^E[A-Z]?\d{6,7}$` |
 | Finland | FI | 2 letters + 7 digits |
-| Faroe Islands | FO | 2 letters + 6 digits |
+| Fiji | FJ | 6-7 digits |
+| Faroe Islands | FO | 9 digits |
 | France | FR | 2 digits + 2 letters + 5 digits |
 | United Kingdom | GB | 9 digits |
-| Ghana | GH | 2 letters + 6 digits |
-| Guinea | GN | 2 letters + 6 digits |
+| Grenada | GD | 1 letter + 6 digits |
+| Georgia | GE | pattern `^\d{8}[A-Z0-9]?$` |
+| Ghana | GH | 1 letter + 7 digits, or 2 letters + 6 digits |
+| Guinea | GN | 15 digits |
 | Greece | GR | 2 letters + 7 digits |
-| Guatemala | GT | 2 letters + 6 digits |
-| Hong Kong | HK | 2 letters + 6 digits |
+| Guatemala | GT | 9 digits |
+| Guyana | GY | 1 letter + 7 digits |
+| Hong Kong | HK | 1-2 letters + 6 digits + 1-2 alphanumerics |
 | Croatia | HR | 9 digits |
-| Hungary | HU | 2 letters + 6-7 digits |
-| Indonesia | ID | 2 letters + 6 digits |
-| Ireland | IE | 2 alphanumeric + 7 digits |
-| Israel | IL | 2 letters + 7 digits |
-| India | IN | 1 letter + 7 digits (old) or 2 letters + 6 digits (new ePassport) |
-| Iceland | IS | A + 7 digits |
-| Italy | IT | 2 alphanumeric + 7 digits |
+| Haiti | HT | 2 letters + 6 digits |
+| Hungary | HU | pattern `^[A-Z]{2}\d{6}$|^[A-Z]{2}\d{7}$` |
+| Indonesia | ID | 1-2 letters + 6-7 digits |
+| Ireland | IE | 2 alphanumerics + 7 digits |
+| Israel | IL | 8 digits |
+| India | IN | 1 letter + 7 digits |
+| Iceland | IS | letter A + 7 digits |
+| Italy | IT | 2 alphanumerics + 7 digits |
+| Jamaica | JM | 1 letter + 7 digits |
 | Japan | JP | 2 letters + 7 digits |
-| Kenya | KE | 2 letters + 6 digits |
-| South Korea | KR | M or S + 8 digits |
+| Kenya | KE | 1-2 letters + 6-8 digits |
+| Cambodia | KH | 1 letter + 7-8 digits |
+| Saint Kitts and Nevis | KN | 1 letter + 6 digits |
+| South Korea | KR | pattern `^[MSROD]\d{8}$|^[MSROD]\d{3}[A-Z]\d{4}$` |
+| Kazakhstan | KZ | 1 letter + 7-8 digits |
+| Laos | LA | 1 letter + 7 digits |
+| Lebanon | LB | pattern `^[A-Z]{2}\d{7}$|^\d{6,7}$` |
+| Saint Lucia | LC | 1 letter + 6 digits |
 | Liechtenstein | LI | 1 letter + 5 digits |
-| Sri Lanka | LK | 2 letters + 6 digits |
-| Lithuania | LT | 8 alphanumeric |
-| Luxembourg | LU | 8 alphanumeric |
-| Latvia | LV | 2 alphanumeric + 7 digits |
+| Sri Lanka | LK | pattern `^(?:[A-Z]\d{7}|[A-Z]{2}\d{6})$` |
+| Lithuania | LT | 8 alphanumerics |
+| Luxembourg | LU | 7-8 alphanumerics |
+| Latvia | LV | 2 alphanumerics + 7 digits |
 | Morocco | MA | 2 letters + 6 digits |
 | Monaco | MC | 2 letters + 6 digits |
-| Moldova | MD | 2 letters + 6 digits |
+| Moldova | MD | pattern `^[A-Z]\d{7}$|^[A-Z]{2}\d{6}$` |
 | Montenegro | ME | 9 digits |
-| North Macedonia | MK | 9 digits |
+| North Macedonia | MK | 1 letter + 7 digits |
+| Mongolia | MN | 2 letters + 7 digits |
 | Malta | MT | 7 digits |
-| Mauritius | MU | 2 letters + 6 digits |
+| Mauritius | MU | 1 letter + 7 digits |
 | Mexico | MX | 1 letter + 8 digits |
-| Malaysia | MY | 1 letter + 8 digits |
-| Mozambique | MZ | 2 letters + 6 digits |
-| Netherlands | NL | 2 letters + 6 alphanumeric + 1 digit |
+| Malaysia | MY | 1 letter [AHK] + 8 digits |
+| Mozambique | MZ | 2 letters + 7 digits |
+| Nigeria | NG | 1 letter + 8 digits |
+| Netherlands | NL | 2 letters + 6 alphanumerics + 1 digit |
 | Norway | NO | 8 digits |
+| Nepal | NP | 8 digits |
 | New Zealand | NZ | 2 letters + 6 digits |
-| Peru | PE | 2 letters + 6 digits |
-| Pakistan | PK | 2 letters + 6 digits |
+| Oman | OM | 1 letter + 7 digits |
+| Peru | PE | 9 digits |
+| Papua New Guinea | PG | 8 digits |
+| Philippines | PH | 1 letter + 6 digits, or 2 letters + 6 digits, or 2 letters + 7 digits, or 1 letter + 7 digits + 1 letter |
+| Pakistan | PK | 2 letters + 7 digits |
 | Poland | PL | 2 letters + 7 digits |
 | Portugal | PT | 1 letter + 6 digits |
 | Paraguay | PY | 2 letters + 6 digits |
-| Romania | RO | 8-9 digits |
+| Qatar | QA | 8 digits |
+| Romania | RO | pattern `^\d{8}$|^\d{9}$` |
 | Serbia | RS | 9 digits |
-| Russia | RU | 2 letters + 6 digits |
+| Russian Federation | RU | 9 digits |
+| Solomon Islands | SB | 7 digits |
 | Sweden | SE | 8 digits |
-| Singapore | SG | 2 letters + 6 digits |
-| Slovenia | SI | P + 1 letter + 7 digits |
-| Slovakia | SK | 1 alphanumeric + 7 digits |
-| San Marino | SM | 2 letters + 6 digits |
-| El Salvador | SV | 2 letters + 6 digits |
-| Thailand | TH | 2 letters + 6 digits |
-| Tunisia | TN | 2 letters + 6 digits |
-| Turkey | TR | 1 letter + 8 digits |
-| Taiwan | TW | 2 letters + 6 digits |
-| Ukraine | UA | 2 letters + 6 digits |
-| United States | US | 9 digits (old) or 1 letter + 8 digits (Next Generation) |
-| Uruguay | UY | 2 letters + 6 digits |
-| Venezuela | VE | 2 letters + 6 digits |
-| Vietnam | VN | 2 letters + 6 digits |
-| South Africa | ZA | 2 letters + 6 digits |
+| Singapore | SG | 1 letter [EK] + 7 digits + 1 letter |
+| Slovenia | SI | letter P + 1 letter + 7 digits |
+| Slovakia | SK | 1 letter + 7 digits, or 2 letters + 6-7 digits |
+| San Marino | SM | 6 digits |
+| Senegal | SN | 9 digits |
+| Suriname | SR | 1 letter + 6-7 digits |
+| El Salvador | SV | 1 letter + 6 digits |
+| Thailand | TH | 2 letters + 7 digits |
+| Tajikistan | TJ | 9 digits |
+| Turkmenistan | TM | 2 letters + 7 digits |
+| Tunisia | TN | 1 letter + 7 digits |
+| Tonga | TO | 6 digits |
+| Turkey (Türkiye) | TR | 1 letter + 8 digits |
+| Trinidad and Tobago | TT | 2 letters + 6 digits |
+| Taiwan (Republic of China) | TW | 9 digits |
+| Tanzania | TZ | pattern `^[A-Z]\d{7}$|^[A-Z]{2}\d{6}$` |
+| Ukraine | UA | pattern `^[A-Z]{2}\d{6}$|^\d{8}$` |
+| Uganda | UG | pattern `^[A-Z]\d{7}$|^[A-Z]{2}\d{6}$|^[A-Z]\d{8}$` |
+| United States | US | pattern `^\d{9}$|^[A-Z]\d{8}$` |
+| Uruguay | UY | 1-3 letters + 6 digits |
+| Saint Vincent and the Grenadines | VC | 2 letters + 8 digits |
+| Venezuela | VE | 8-9 digits |
+| Vietnam | VN | 1 letter + 7 digits, or 9 digits |
+| Vanuatu | VU | 0-4 letters + 5-11 digits |
+| Samoa | WS | letter T + 6 digits |
+| Yemen | YE | 8 digits |
+| South Africa | ZA | 1 letter + 8 digits |
+| Zambia | ZM | 2 letters + 6 digits |
 
 *Note: Germany includes checksum validation for machine-readable passport formats. Additional checksum validation can be added for other countries as documentation becomes available.*
 

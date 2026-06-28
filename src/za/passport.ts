@@ -2,8 +2,12 @@
  * South African Passport Number (South African Passport).
  *
  *
+ * Format: One letter followed by 8 digits. The leading letter indicates passport type: A = ordinary/normal, M = maxi, D = diplomatic, T = travel document.
+ *
  * Source
- *   Passport number format for ZA
+ *   https://en.wikipedia.org/wiki/South_African_passport
+ *   https://www.consilium.europa.eu/prado/en/ZAF-AO-01001/index.html
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-south-africa-identification-number
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]\d{8}$/;
 
 const impl: Validator = {
   name: 'South African Passport Number',

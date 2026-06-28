@@ -2,8 +2,12 @@
  * Cambodian Passport Number (លិខណៈកម្មដេកល្ខ).
  *
  *
+ * Format: One uppercase letter (commonly 'N') followed by 7 or 8 digits (e.g. N1707843, N00144521). Total length 8-9 characters.
+ *
  * Source
- *   passport number format for KH
+ *   https://en.wikipedia.org/wiki/Cambodian_passport
+ *   https://www.embassyofcambodiadc.org/cambodia-sample-doc.html
+ *   https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PII/Content/PII/PII_Examples_Passport.htm
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]\d{7,8}$/;
 
 const impl: Validator = {
   name: 'Cambodian Passport Number',

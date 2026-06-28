@@ -2,8 +2,11 @@
  * Croatian Passport Number (Hrvatski putovnica).
  *
  *
+ * Format: Nine digits, no letters, no spaces or delimiters.
+ *
  * Source
- *   Passport number format for HR
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-croatia-passport-number
+ *   https://en.wikipedia.org/wiki/Croatian_passport
  *
  * PERSON
  */

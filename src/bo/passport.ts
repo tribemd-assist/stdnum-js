@@ -2,8 +2,12 @@
  * Bolivian Passport Number (Pasaporte boliviano).
  *
  *
+ * Format: Bolivian passport number. No authoritative published spec for the exact letter/digit layout could be found. Bolivian e-passports (MRP, 32 pages) carry a document number in the MRZ, but neither ICAO, the Bolivian Direccion General de Migracion, Microsoft Purview (no SIT exists), nor Wikipedia document the precise structure. The current project guess of 2 letters + 6 digits is undocumented. Replaced with a broad alphanumeric 6-9 character pattern reflecting the general uncertainty rather than asserting an unverified specific shape.
+ *
  * Source
- *   Passport number format for BO
+ *   https://en.wikipedia.org/wiki/Bolivian_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Bolivia.html
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-bolivia-passport-number
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z0-9]{6,9}$/;
 
 const impl: Validator = {
   name: 'Bolivian Passport Number',

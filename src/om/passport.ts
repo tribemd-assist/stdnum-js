@@ -2,8 +2,12 @@
  * Omani Passport Number (جواز سفر عماني).
  *
  *
+ * Format: 1 uppercase letter followed by 7 digits (most commonly cited third-party format for Omani biometric passports, issued from 2014). Not confirmed against a primary/government source.
+ *
  * Source
- *   passport number format for OM
+ *   https://en.wikipedia.org/wiki/Omani_passport
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/omn/a/docs-per-category.html
+ *   https://www.rop.gov.om/english/e_passport.aspx
  *
  * PERSON
  */

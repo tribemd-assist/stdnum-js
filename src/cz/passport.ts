@@ -2,8 +2,12 @@
  * Czech Passport Number (Cestovní pas).
  *
  *
+ * Format: Eight digits without spaces or delimiters (per Microsoft Purview Czech passport SIT).
+ *
  * Source
- *   Passport number format for CZ
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-czech-passport-number
+ *   https://en.wikipedia.org/wiki/Czech_passport
+ *   https://www.consilium.europa.eu/prado/en/CZE-AO-04001/index.html
  *
  * PERSON
  */

@@ -2,8 +2,11 @@
  * Guyanese Passport Number (Guyanese passport).
  *
  *
+ * Format: One uppercase letter followed by seven digits (e.g. R-prefixed machine-readable passport serial). Total 8 characters.
+ *
  * Source
- *   passport number format for GY
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Guyanese_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{6}\d{6}$/;
+const idRegexp = /^[A-Z]\d{7}$/;
 
 const impl: Validator = {
   name: 'Guyanese Passport Number',

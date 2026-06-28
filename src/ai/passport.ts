@@ -2,8 +2,12 @@
  * Anguillan Passport Number (Anguilla Passport).
  *
  *
+ * Format: Modern Anguilla passports are British Overseas Territory passports issued since 2015 by HM Passport Office (UK), using the UK format: 9 characters, one letter-or-digit followed by 8 digits (in practice 9 digits). An older British-territory format of two letters followed by six digits is retained via alternation.
+ *
  * Source
- *   Passport number format for AI
+ *   https://en.wikipedia.org/wiki/British_passport_(Anguilla)
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-us-uk-passport-number
+ *   https://www.gov.ai/document/forms/passport/Applying%20for%20an%20Anguilla%20BOT%20Passport%20-%20Guidance%20Notes.pdf
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^\d{9}$|^[A-Z]{2}\d{6}$/;
 
 const impl: Validator = {
   name: 'Anguillan Passport Number',

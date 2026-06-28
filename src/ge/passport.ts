@@ -2,8 +2,12 @@
  * Georgian Passport Number (საქართველოს პასპორტი).
  *
  *
+ * Format: Numeric passport serial, approximately 8-9 digits (exact modern format not authoritatively confirmed).
+ *
  * Source
- *   passport number format for GE
+ *   https://en.wikipedia.org/wiki/Georgian_passport
+ *   https://www.ecoi.net/en/document/1207477.html
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/geo/a/docs-per-category.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[0-9]{9}$/;
+const idRegexp = /^\d{8}[A-Z0-9]?$/;
 
 const impl: Validator = {
   name: 'Georgian Passport Number',

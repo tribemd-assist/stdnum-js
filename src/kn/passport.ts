@@ -2,8 +2,12 @@
  * Kittitian and Nevisian Passport Number (Saint Kitts and Nevis passport).
  *
  *
+ * Format: Believed to be one uppercase letter followed by six digits. NOT confirmed by any authoritative source.
+ *
  * Source
- *   passport number format for KN
+ *   https://en.wikipedia.org/wiki/Saint_Kitts_and_Nevis_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/SaintKittsandNevis.html
+ *   https://www.passportindex.org/passport/saint-kitts-and-nevis/
  *
  * PERSON
  */

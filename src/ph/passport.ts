@@ -2,8 +2,11 @@
  * Philippine Passport Number (Pilipinas passport).
  *
  *
+ * Format: Philippine passport numbers have evolved through several formats: brown passports = 1 letter + 6 digits; green pre-2005 = 2 letters + 6 digits; 2005 to Aug 2016 (machine-readable/early biometric) = 2 letters + 7 digits; post-Aug 15 2016 e-passports = 1 letter + 7 digits + 1 trailing letter. Microsoft Purview's pattern matches all four. Total length ranges 7 to 9 characters.
+ *
  * Source
- *   passport number format for PH
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-philippines-passport-number
+ *   https://en.wikipedia.org/wiki/Philippine_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{7}$/;
+const idRegexp = /^([A-Z]\d{6}|[A-Z]{2}\d{6}|[A-Z]{2}\d{7}|[A-Z]\d{7}[A-Z])$/;
 
 const impl: Validator = {
   name: 'Philippine Passport Number',

@@ -2,8 +2,10 @@
  * Australian Passport Number (Australian Passport).
  *
  *
+ * Format: Either one letter followed by seven digits, or two letters followed by seven digits. Microsoft Purview documents the specific allowed prefixes as single letters N,E,D,F,A,C,U,X and two-letter prefixes PA,PB,PC,PD,PE,PF,PU,PW,PX,PZ.
+ *
  * Source
- *   Passport number format for AU
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-australia-passport-number
  *
  * PERSON
  */

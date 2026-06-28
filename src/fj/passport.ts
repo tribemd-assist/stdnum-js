@@ -2,8 +2,12 @@
  * Fijian Passport Number (Fijian passport).
  *
  *
+ * Format: Numeric only, 6 or 7 digits. Older passports used 6 digits; modern machine-readable passports use 7 digits.
+ *
  * Source
- *   passport number format for FJ
+ *   https://en.wikipedia.org/wiki/Fijian_passport
+ *   https://www.immigration.gov.fj/fiji-passports/
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Fiji.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[0-9]{7}$/;
+const idRegexp = /^\d{6,7}$/;
 
 const impl: Validator = {
   name: 'Fijian Passport Number',

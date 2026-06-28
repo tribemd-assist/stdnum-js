@@ -2,8 +2,13 @@
  * Armenian Passport Number (Հայաստան անձնագիր).
  *
  *
+ * Format: Armenian biometric (ordinary) passport number: typically two uppercase letters (commonly the 'AN' prefix for ordinary passports) followed by seven digits. The MRZ document-number field is 9 alphanumeric characters, consistent with a 2-letter + 7-digit serial.
+ *
  * Source
- *   passport number format for AM
+ *   https://en.wikipedia.org/wiki/Armenian_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Armenia.html
+ *   https://trustdochub.com/en/product/armenian-passport-validity/
+ *   https://www.mfa.am/en/passport/
  *
  * PERSON
  */

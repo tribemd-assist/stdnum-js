@@ -2,8 +2,12 @@
  * Costa Rican Passport Number (Pasaporte costarricense).
  *
  *
+ * Format: Two uppercase letters followed by six digits (per project's existing implementation and test cases). No authoritative government/ICAO/Purview source documents the Costa Rican passport number serial format; Microsoft Purview has no Costa Rica passport SIT, and Wikipedia/PRADO do not describe the serial structure.
+ *
  * Source
- *   Passport number format for CR
+ *   https://en.wikipedia.org/wiki/Costa_Rican_passport
+ *   https://regulaforensics.com/blog/costa-rica-id-card-processing/
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/cri/index.html
  *
  * PERSON
  */

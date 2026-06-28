@@ -2,8 +2,12 @@
  * Monégasque Passport Number (Passeport monégasque).
  *
  *
+ * Format: Project uses two letters followed by six digits; no authoritative source found documenting the exact letter/digit composition of the human-entered Monegasque passport number.
+ *
  * Source
- *   Passport number format for MC
+ *   https://en.wikipedia.org/wiki/Mon%C3%A9gasque_passport
+ *   https://www.consilium.europa.eu/prado/en/MCO-AO-01001/index.html
+ *   https://www.passportindex.org/passport/monaco/
  *
  * PERSON
  */

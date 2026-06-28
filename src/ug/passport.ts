@@ -2,8 +2,12 @@
  * Ugandan Passport Number (Passapooti ya Uganda).
  *
  *
+ * Format: Ugandan passport number is documented (Danske Bank national identifier list) as '8 or 9 digits' in the forms X9999999 (one letter + seven digits), XX999999 (two letters + six digits), or X99999999 (one letter + eight digits). Diplomatic passports use a 'DA' prefix. So one or two leading Latin letters followed by 6-8 digits, 8 or 9 characters total.
+ *
  * Source
- *   passport number format for UG
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://www.idanalyzer.com/solutions/supported-documents/ug.html
+ *   https://en.wikipedia.org/wiki/Ugandan_passport
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{3}\d{6}$/;
+const idRegexp = /^[A-Z]\d{7}$|^[A-Z]{2}\d{6}$|^[A-Z]\d{8}$/;
 
 const impl: Validator = {
   name: 'Ugandan Passport Number',

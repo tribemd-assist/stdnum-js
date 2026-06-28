@@ -2,8 +2,12 @@
  * Tongan Passport Number (Tongan passport).
  *
  *
+ * Format: 6 digits. Tongan MRPs are lodged via the Tonga Consulate General. No authoritative source publishes the serial composition; 6 digits is an unverified guess.
+ *
  * Source
- *   passport number format for TO
+ *   https://en.wikipedia.org/wiki/Tongan_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Tonga.html
+ *   https://ago.gov.to/cms/images/LEGISLATION/SUBORDINATE/2508/2508-0001/PassportRegulations_2.pdf
  *
  * PERSON
  */

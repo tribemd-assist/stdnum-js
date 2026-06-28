@@ -2,8 +2,12 @@
  * North Macedonian Passport Number (Македонски пасош).
  *
  *
+ * Format: North Macedonian biometric passport serials are commonly a single letter prefix followed by 7 digits (e.g. A1234567), consistent with regional ex-Yugoslav passport conventions. The project's current ^\d{9}$ (9 plain digits) is likely incorrect.
+ *
  * Source
- *   Passport number format for MK
+ *   https://en.wikipedia.org/wiki/North_Macedonian_passport
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/mkd/a/docs-per-category.html
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Macedonia.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^\d{9}$/;
+const idRegexp = /^[A-Z]\d{7}$/;
 
 const impl: Validator = {
   name: 'North Macedonian Passport Number',

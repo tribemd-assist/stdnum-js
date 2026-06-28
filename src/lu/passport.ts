@@ -2,8 +2,11 @@
  * Luxembourgish Passport Number (Lëtzebuerger Pass).
  *
  *
+ * Format: Seven or eight alphanumeric characters (letters and/or digits), no spaces or delimiters.
+ *
  * Source
- *   Passport number format for LU
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-luxemburg-passport-number
+ *   https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PII/Content/PII/PII_Examples_Passport.htm
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z0-9]{8}$/;
+const idRegexp = /^[A-Z0-9]{7,8}$/;
 
 const impl: Validator = {
   name: 'Luxembourgish Passport Number',

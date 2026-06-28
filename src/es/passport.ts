@@ -2,8 +2,11 @@
  * Spanish Passport Number (Pasaporte español).
  *
  *
+ * Format: Spanish passport number: an 8- or 9-character combination of letters/numbers — two digits or letters, one optional digit or letter, then six digits (no spaces or delimiters).
+ *
  * Source
- *   Passport number format for ES
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-spain-passport-number
+ *   https://en.wikipedia.org/wiki/Spanish_passport
  *
  * PERSON
  */

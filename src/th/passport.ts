@@ -2,8 +2,12 @@
  * Thai Passport Number (หนังสือเดินทางไทย).
  *
  *
+ * Format: Two letters followed by 7 digits (e.g., 'AA1234567'), totaling 9 characters, matching the ICAO MRZ document-number field for modern Thai e-passports.
+ *
  * Source
- *   Passport number format for TH
+ *   https://en.wikipedia.org/wiki/Thai_passport
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/tha/a/docs-per-category.html
+ *   https://docs.trellix.com/bundle/data-loss-prevention-11.10.x-classification-definitions-reference-guide/page/GUID-2166D96B-097D-4E5B-80E8-B2960E812767.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]{2}\d{7}$/;
 
 const impl: Validator = {
   name: 'Thai Passport Number',

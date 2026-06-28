@@ -2,8 +2,12 @@
  * Cypriot Passport Number (Κυπριακό διαβατήριο).
  *
  *
+ * Format: One uppercase letter followed by 6 to 8 digits, no spaces or delimiters (per Microsoft Purview Cyprus passport SIT). Current passport series begin with letters such as K then L.
+ *
  * Source
- *   Passport number format for CY
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-cyprus-passport-number
+ *   https://en.wikipedia.org/wiki/Cypriot_passport
+ *   https://www.consilium.europa.eu/prado/en/CYP-AO-04002/index.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]\d{6}$|^[A-Z]\d{8}$/;
+const idRegexp = /^[A-Z]\d{6,8}$/;
 
 const impl: Validator = {
   name: 'Cypriot Passport Number',

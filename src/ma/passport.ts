@@ -2,8 +2,12 @@
  * Moroccan Passport Number (جواز سفر مغربي).
  *
  *
+ * Format: Commonly two letters followed by six digits as used by the project; however authoritative sources describe the document number as 9 characters without specifying the letter/digit split.
+ *
  * Source
- *   Passport number format for MA
+ *   https://en.wikipedia.org/wiki/Moroccan_passport
+ *   https://trustdochub.com/en/verify-moroccan-passport/
+ *   https://www.consilium.europa.eu/prado/en/MAR-AO-02001/index.html
  *
  * PERSON
  */

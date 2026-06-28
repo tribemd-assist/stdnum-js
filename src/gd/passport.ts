@@ -2,8 +2,11 @@
  * Grenadian Passport Number (Grenadian passport).
  *
  *
+ * Format: One letter followed by six digits (unconfirmed).
+ *
  * Source
- *   passport number format for GD
+ *   https://en.wikipedia.org/wiki/Grenadian_passport
+ *   https://en.wikipedia.org/wiki/CARICOM_passport
  *
  * PERSON
  */

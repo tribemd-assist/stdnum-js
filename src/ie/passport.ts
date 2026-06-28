@@ -2,8 +2,12 @@
  * Irish Passport Number (Passeport Éireannach).
  *
  *
+ * Format: Two characters that may each be a letter or digit, followed by seven digits, no spaces or delimiters (9 characters total).
+ *
  * Source
- *   Passport number format for IE
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-ireland-passport-number
+ *   https://en.wikipedia.org/wiki/Irish_passport
+ *   https://www.ireland.ie/en/dfa/passports/faqs/
  *
  * PERSON
  */

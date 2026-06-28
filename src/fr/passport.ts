@@ -2,8 +2,11 @@
  * French Passport Number (Passeport français).
  *
  *
+ * Format: Nine characters: two digits, followed by two letters, followed by five digits.
+ *
  * Source
- *   Passport number format for FR
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-france-passport-number
+ *   https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PII/Content/PII/PII_Examples_Passport.htm
  *
  * PERSON
  */

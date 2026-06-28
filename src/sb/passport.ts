@@ -2,8 +2,12 @@
  * Solomon Islands Passport Number (Solomon Islands passport).
  *
  *
+ * Format: No authoritative specification of the Solomon Islands passport number format could be found. Solomon Islands issues ICAO-compliant ePassports (since ~2015-2017, supplied by IRIS Corporation). The current project guess is a 7-digit number.
+ *
  * Source
- *   passport number format for SB
+ *   https://en.wikipedia.org/wiki/Solomon_Islands_passport
+ *   https://immigration.gov.sb/epassport/
+ *   https://www.commerce.gov.sb/departments-units/immigration/passports/i-want-to-apply-for-a/for-an-epassport.html
  *
  * PERSON
  */

@@ -2,8 +2,12 @@
  * Yemeni Passport Number (جواز سفر يمني).
  *
  *
+ * Format: 8 digits (numeric serial). No authoritative published spec for the Yemeni passport number layout was found.
+ *
  * Source
- *   passport number format for YE
+ *   https://en.wikipedia.org/wiki/Yemeni_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Yemen.html
+ *   https://maskat.diplo.de/blob/2238358/5f7c4a50ec45ff0861b5ed2a650a8eac/information-yemeni-passports-data.pdf
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[0-9]{8}$/;
+const idRegexp = /^\d{8}$/;
 
 const impl: Validator = {
   name: 'Yemeni Passport Number',

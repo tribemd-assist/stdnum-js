@@ -2,8 +2,12 @@
  * Belizean Passport Number (Belize Passport).
  *
  *
+ * Format: Two uppercase letters followed by six digits (e.g. PA123456). Note: this is the project's existing guess; no authoritative source was found confirming it, and one secondary source suggested a single-letter + 7-digit (8-char) format instead. Kept as-is pending an authoritative source.
+ *
  * Source
- *   Passport number format for BZ
+ *   https://en.wikipedia.org/wiki/Belizean_passport
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/blz/index.html
+ *   https://immigration.gov.bz/passport/passport-requirements/
  *
  * PERSON
  */

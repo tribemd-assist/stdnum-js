@@ -2,8 +2,12 @@
  * Surinamese Passport Number (Surinaams paspoort).
  *
  *
+ * Format: One letter prefix followed by 6 to 7 digits. The U.S. Department of State reciprocity page states that the regular Suriname passport number 'starts with R' (single-letter prefix), with other prefixes for service/diplomatic/emergency booklets, contradicting the current two-letter guess.
+ *
  * Source
- *   passport number format for SR
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Suriname.html
+ *   https://en.wikipedia.org/wiki/Surinamese_passport
+ *   https://burgerzaken.gov.sr/paspoorten
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]\d{6,7}$/;
 
 const impl: Validator = {
   name: 'Surinamese Passport Number',

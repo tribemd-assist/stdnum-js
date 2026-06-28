@@ -2,8 +2,12 @@
  * Mongolian Passport Number (Монголын паспорты).
  *
  *
+ * Format: Mongolian passport number is a 9-character alphanumeric serial: two uppercase letters followed by 7 digits (e.g. AB1234567). This matches the project's current regex.
+ *
  * Source
- *   passport number format for MN
+ *   https://en.wikipedia.org/wiki/Mongolian_passport
+ *   https://www.passportindex.org/passport/mongolia/
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/mng/a/d/docs-per-type.html
  *
  * PERSON
  */

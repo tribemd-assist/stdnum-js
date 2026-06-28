@@ -8,16 +8,13 @@ describe('dk/passport', () => {
     expect(result).toEqual('123456789');
   });
 
-  test.each(['123456789', '123456789', '123456789'])(
-    'validate:%s',
-    value => {
-      const result = validate(value);
+  test.each(['123456789', '900010172'])('validate:%s', value => {
+    const result = validate(value);
 
-      expect(result.isValid).toBeTruthy();
-    },
-  );
+    expect(result.isValid).toBeTruthy();
+  });
 
-  test.each(['INVALID', '123456', 'ABCDEFGH'])('validate:%s', value => {
+  test.each(['K01234567', '01234567'])('validate:%s', value => {
     const result = validate(value);
 
     expect(result.error).toBeInstanceOf(InvalidFormat);

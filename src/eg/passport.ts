@@ -2,8 +2,11 @@
  * Egyptian Passport Number (جواز سفر مصري).
  *
  *
+ * Format: Egyptian machine-readable passport number: one letter followed by eight digits (e.g. A12345678), introduced with MRPs from 2008.
+ *
  * Source
- *   Passport number format for EG
+ *   https://www.ecoi.net/en/document/2064764.html
+ *   https://en.wikipedia.org/wiki/Egyptian_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{7}$/;
+const idRegexp = /^[A-Z]\d{8}$/;
 
 const impl: Validator = {
   name: 'Egyptian Passport Number',

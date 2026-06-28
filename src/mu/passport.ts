@@ -2,8 +2,11 @@
  * Mauritian Passport Number (Passeport mauricien).
  *
  *
+ * Format: Modern Mauritian MRP number is nine alphanumeric characters; commonly one letter followed by seven digits.
+ *
  * Source
- *   Passport number format for MU
+ *   https://en.wikipedia.org/wiki/Mauritian_passport
+ *   https://grokipedia.com/page/Mauritian_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]\d{7}$/;
 
 const impl: Validator = {
   name: 'Mauritian Passport Number',

@@ -2,8 +2,12 @@
  * Saint Lucian Passport Number (Saint Lucian passport).
  *
  *
+ * Format: Could not find an authoritative specification for the Saint Lucia passport number. Saint Lucia issues ICAO-compliant CARICOM/OECS biometric e-passports, but no government or standards source documents the serial structure. The project's current guess is 1 letter followed by 6 digits.
+ *
  * Source
- *   passport number format for LC
+ *   https://en.wikipedia.org/wiki/Saint_Lucian_passport
+ *   https://www.govt.lc/services/issuance-of-passports
+ *   https://www.idanalyzer.com/solutions/supported-documents/lc.html
  *
  * PERSON
  */

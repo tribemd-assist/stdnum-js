@@ -2,8 +2,11 @@
  * Andorran Passport Number (Passaport andorrà).
  *
  *
+ * Format: One uppercase letter followed by 7 digits. The official Andorran passport number is documented as a capital 'O' plus seven digits (e.g. O1234567); the regex generalizes the prefix to any letter to tolerate variants and older issues.
+ *
  * Source
- *   Passport number format for AD
+ *   https://www.morabanc.ad/en/morablog/the-andorran-passport-the-most-secure-passport-in-the-world/
+ *   https://en.wikipedia.org/wiki/Andorran_passport
  *
  * PERSON
  */

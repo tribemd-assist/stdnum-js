@@ -2,8 +2,13 @@
  * Guinean Passport Number (Passeport guinéen).
  *
  *
+ * Format: Guinea passport/personal number documented as 15 numeric digits in the form 9YYMMDD99999999 (a leading digit, a YYMMDD date-of-birth component, then 8 sequential digits). All numeric, no letters.
+ *
  * Source
- *   Passport number format for GN
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://www.amba-guinee.de/wp-content/uploads/2022/05/Liste_des_Passpport_202205.pdf
+ *   https://fr.wikipedia.org/wiki/Passeport_guin%C3%A9en
+ *   https://www.paf.gov.gn/dnpaf/?page_id=125&lang=en
  *
  * PERSON
  */
@@ -16,7 +21,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^\d{15}$/;
 
 const impl: Validator = {
   name: 'Guinean Passport Number',

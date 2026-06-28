@@ -2,8 +2,12 @@
  * Montenegrin Passport Number (Crnogorski pasoš).
  *
  *
+ * Format: Montenegrin passport serial reported as a numeric string (the project currently uses 9 digits). Some references suggest 8 digits, but no authoritative source confirms the exact length.
+ *
  * Source
- *   Passport number format for ME
+ *   https://en.wikipedia.org/wiki/Montenegrin_passport
+ *   https://www.consilium.europa.eu/prado/en/MNE-AS-01001/index.html
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Montenegro.html
  *
  * PERSON
  */

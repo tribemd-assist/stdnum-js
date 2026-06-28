@@ -2,8 +2,12 @@
  * Hungarian Passport Number (Magyar útlevél).
  *
  *
+ * Format: Two uppercase letters followed by six digits (older blue passport) or seven digits (newer burgundy/biometric passport), no spaces or delimiters.
+ *
  * Source
- *   Passport number format for HU
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-hungary-passport-number
+ *   https://en.wikipedia.org/wiki/Hungarian_passport
+ *   https://www.refworld.org/docid/4dd23900394.html
  *
  * PERSON
  */

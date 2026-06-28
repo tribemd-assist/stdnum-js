@@ -2,8 +2,11 @@
  * Swedish Passport Number (Svenskt pass).
  *
  *
+ * Format: Swedish passport number: eight consecutive digits, printed in the 'Passnr./Passport No.' field. No letters.
+ *
  * Source
- *   Passport number format for SE
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-sweden-passport-number
+ *   https://en.wikipedia.org/wiki/Swedish_passport
  *
  * PERSON
  */

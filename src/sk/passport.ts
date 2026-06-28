@@ -2,8 +2,10 @@
  * Slovak Passport Number (Slovenský pas).
  *
  *
+ * Format: Eight or nine character alphanumeric: one letter followed by seven digits, OR two letters followed by six or seven digits.
+ *
  * Source
- *   Passport number format for SK
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-slovakia-passport-number
  *
  * PERSON
  */
@@ -16,7 +18,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z0-9]\d{7}$/;
+const idRegexp = /^([A-Z]\d{7}|[A-Z]{2}\d{6,7})$/;
 
 const impl: Validator = {
   name: 'Slovak Passport Number',

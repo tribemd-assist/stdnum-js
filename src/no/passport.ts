@@ -2,8 +2,12 @@
  * Norwegian Passport Number (Norsk pass).
  *
  *
+ * Format: Norwegian passport document number is commonly cited as 8 digits. Note that the Norwegian national identity number (fødselsnummer, 11 digits) is a separate value printed on the passport and is NOT the passport number. No authoritative government spec confirming the exact passport serial length was obtainable.
+ *
  * Source
- *   Passport number format for NO
+ *   https://en.wikipedia.org/wiki/Norwegian_passport
+ *   https://www.consilium.europa.eu/prado/en/NOR-AO-03001/index.html
+ *   https://www.politiet.no/globalassets/tjenester-admin/pass-og-id-kort/control-guide-norwegian-passports-oct-19-2020.pdf
  *
  * PERSON
  */

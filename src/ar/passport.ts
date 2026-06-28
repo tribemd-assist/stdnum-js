@@ -2,8 +2,12 @@
  * Argentine Passport Number (Pasaporte argentino).
  *
  *
+ * Format: Modern Argentine biometric passport number (issued since Dec 2012): three uppercase letters followed by six digits (AAA000000). Older pre-2012 passports used the holder's 9-digit national ID number plus a trailing letter, but those are no longer issued.
+ *
  * Source
- *   Passport number format for AR
+ *   https://en.wikipedia.org/wiki/Argentine_passport
+ *   https://trustdochub.com/en/verify-argentine-passport/
+ *   https://www.passportindex.org/passport/argentina/
  *
  * PERSON
  */

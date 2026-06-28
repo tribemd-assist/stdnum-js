@@ -2,8 +2,12 @@
  * Mozambican Passport Number (Passaporte moçambicano).
  *
  *
+ * Format: Modern Mozambican machine-readable passports use two letters followed by seven digits (e.g. AB1234567). The project's current regex used only six digits, which appears too short for current MRP-era passports; the 2-letter + 7-digit pattern is the commonly observed serial. Authoritative confirmation was not obtainable (PRADO page returned 403), so this is not firmly verified.
+ *
  * Source
- *   Passport number format for MZ
+ *   https://en.wikipedia.org/wiki/Mozambican_passport
+ *   https://www.consilium.europa.eu/prado/en/MOZ-AO-02001/index.html
+ *   https://www.icao.int/Meetings/AMC/MRTD-SEMINAR-2010-AFRICA/Documentation/9_MozambiqueImmigration2.pdf
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]{2}\d{7}$/;
 
 const impl: Validator = {
   name: 'Mozambican Passport Number',

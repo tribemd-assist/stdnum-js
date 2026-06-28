@@ -2,8 +2,12 @@
  * Trinidadian and Tobagonian Passport Number (Trinidad and Tobago passport).
  *
  *
+ * Format: Two uppercase letters followed by six digits (e.g. TA123456). This is the machine-readable passport (MRP) number introduced in 2007.
+ *
  * Source
- *   passport number format for TT
+ *   https://en.wikipedia.org/wiki/Trinidad_and_Tobago_passport
+ *   https://foreign.gov.tt/documents/168/machine-readable-passport-brochure.pdf
+ *   https://knowledge.broadcom.com/external/article/159954/detect-passport-numbers-for-one-or-more.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{6}\d{6}$/;
+const idRegexp = /^[A-Z]{2}\d{6}$/;
 
 const impl: Validator = {
   name: 'Trinidadian and Tobagonian Passport Number',

@@ -2,8 +2,11 @@
  * Algerian Passport Number (جواز سفر جزائري).
  *
  *
+ * Format: Nine digits, no letters.
+ *
  * Source
- *   Passport number format for DZ
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://github.com/validatorjs/validator.js/blob/master/src/lib/isPassportNumber.js
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^\d{9}$/;
 
 const impl: Validator = {
   name: 'Algerian Passport Number',

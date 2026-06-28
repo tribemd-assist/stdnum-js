@@ -2,8 +2,11 @@
  * Dominican Passport Number (Dominican passport).
  *
  *
+ * Format: One or two uppercase letters followed by seven digits (total 8 or 9 characters). Format X9999999 or XX99999999.
+ *
  * Source
- *   passport number format for DM
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Commonwealth_of_Dominica_passport
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]\d{6}$/;
+const idRegexp = /^[A-Z]\d{7}$|^[A-Z]{2}\d{7}$/;
 
 const impl: Validator = {
   name: 'Dominican Passport Number',

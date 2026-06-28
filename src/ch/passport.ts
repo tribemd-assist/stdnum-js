@@ -2,8 +2,12 @@
  * Swiss Passport Number (Schweizer Pass).
  *
  *
+ * Format: Eight characters beginning with an uppercase letter. Old Pass 10 (2010): the letter 'X' followed by 7 digits (e.g. X1234567). New Pass 22 (since Oct 2022): a non-public mixed alphanumeric scheme, 8 characters, leading letter then a mix of digits and letters (e.g. S0A00A00). Letters O and I are not used.
+ *
  * Source
- *   Passport number format for CH
+ *   https://en.wikipedia.org/wiki/Swiss_passport
+ *   https://www.travelnews.ch/english-corner/26038-how-can-you-distinguish-between-a-zero-and-an-o-in-a-passport.html
+ *   https://www.thelocal.ch/20250901/letter-or-number-how-to-decode-the-mystery-of-your-swiss-passport
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]\d{7}$/;
+const idRegexp = /^[A-Z][0-9A-Z]{7}$/;
 
 const impl: Validator = {
   name: 'Swiss Passport Number',

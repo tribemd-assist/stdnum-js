@@ -2,8 +2,12 @@
  * Mexican Passport Number (Pasaporte mexicano).
  *
  *
+ * Format: One letter (series, e.g. G/J/N) followed by eight digits.
+ *
  * Source
- *   Passport number format for MX
+ *   https://github.com/validatorjs/validator.js/issues/2641
+ *   https://en.wikipedia.org/wiki/Mexican_passport
+ *   https://trustdochub.com/en/verify-mexican-passport/
  *
  * PERSON
  */

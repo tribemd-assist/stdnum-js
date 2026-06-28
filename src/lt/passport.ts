@@ -2,8 +2,11 @@
  * Lithuanian Passport Number (Lietuvos pasas).
  *
  *
+ * Format: Eight characters, each a digit or an uppercase letter, with no spaces or delimiters.
+ *
  * Source
- *   Passport number format for LT
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-lithuania-passport-number
+ *   https://en.wikipedia.org/wiki/Lithuanian_passport
  *
  * PERSON
  */

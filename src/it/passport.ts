@@ -2,8 +2,11 @@
  * Italian Passport Number (Passaporto italiano).
  *
  *
+ * Format: Two characters that may each be a letter or digit, followed by seven digits, total nine characters, no spaces or delimiters (e.g. AA1234567, YA1234567). Matches Microsoft Purview's Italy passport definition exactly.
+ *
  * Source
- *   Passport number format for IT
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-italy-passport-number
+ *   https://docs.trellix.com/bundle/data-loss-prevention-11.10.x-classification-definitions-reference-guide/page/UUID-8d3d80c4-db8b-0524-8845-e2af30c6de6d.html
  *
  * PERSON
  */

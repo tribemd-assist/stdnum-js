@@ -2,8 +2,11 @@
  * Finnish Passport Number (Suomalainen passi).
  *
  *
+ * Format: Two letters followed by seven digits (e.g. AB1234567).
+ *
  * Source
- *   Passport number format for FI
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-finland-passport-number
+ *   https://en.wikipedia.org/wiki/Finnish_passport
  *
  * PERSON
  */

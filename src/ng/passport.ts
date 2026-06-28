@@ -2,8 +2,12 @@
  * Nigerian Passport Number (Nigerian passport).
  *
  *
+ * Format: Nigerian e-passport number is one letter followed by eight digits (e.g. A12345678), total 9 characters. Confirmed by the QoreID identity-verification API documentation, which shows passportNo examples like A10000001, and by general format descriptions citing 'eight digits and one letter'.
+ *
  * Source
- *   passport number format for NG
+ *   https://docs.qoreid.com/docs/international-passport
+ *   https://en.wikipedia.org/wiki/Nigerian_passport
+ *   https://www.legit.ng/1137052-where-nigerian-passport-book-number-located.html
  *
  * PERSON
  */

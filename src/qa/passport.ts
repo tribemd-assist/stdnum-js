@@ -2,8 +2,12 @@
  * Qatari Passport Number (جواز سفر قطري).
  *
  *
+ * Format: Eight digits (e.g. 12345678). No spaces or delimiters.
+ *
  * Source
- *   passport number format for QA
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Qatari_passport
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/qat/a/docs-per-category.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[0-9]{10}$/;
+const idRegexp = /^\d{8}$/;
 
 const impl: Validator = {
   name: 'Qatari Passport Number',

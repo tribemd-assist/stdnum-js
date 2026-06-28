@@ -2,8 +2,12 @@
  * Canadian Passport Number (Passeport canadien).
  *
  *
+ * Format: Older/standard format is two uppercase letters followed by six digits (e.g. AB123456, 8 chars). Newer passports (next-generation series) use one letter, six digits, then two letters (e.g. A123456BC, 9 chars). Both forms are in circulation and valid.
+ *
  * Source
- *   Passport number format for CA
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-canada-passport-number
+ *   https://en.wikipedia.org/wiki/Canadian_passport
+ *   https://github.com/validatorjs/validator.js/issues/2525
  *   https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/new-passport-features.html
  *
  * PERSON

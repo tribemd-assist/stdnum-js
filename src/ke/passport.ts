@@ -2,8 +2,12 @@
  * Kenyan Passport Number (Kenyan Passport).
  *
  *
+ * Format: One or two uppercase letters followed by 6 to 8 digits. The common ordinary passport is the 'A' series (single letter A + digits); the EAC e-passport (since 2017) also uses an alphanumeric serial. Exact digit count is not authoritatively published.
+ *
  * Source
- *   Passport number format for KE
+ *   https://en.wikipedia.org/wiki/Kenyan_passport
+ *   https://immigration.go.ke/passport-section/
+ *   https://docs.usesmileid.com/supported-id-types/for-individuals-kyc/backed-by-id-authority/supported-countries/kenya/passport
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]{1,2}\d{6,8}$/;
 
 const impl: Validator = {
   name: 'Kenyan Passport Number',

@@ -2,8 +2,12 @@
  * United States Passport Number (United States Passport).
  *
  *
+ * Format: Pre-2021 U.S. passport books use a purely numeric nine-digit number. The Next Generation Passport (NGP), issued since 2021, uses one Latin letter followed by eight digits (9 characters total). Both formats remain valid and in circulation.
+ *
  * Source
- *   Passport number format for US
+ *   https://travel.state.gov/content/travel/en/passports/passport-help/next-generation-passport.html
+ *   https://travel.state.gov/en/passports/apply/help/security-design.html
+ *   https://legalclarity.org/us-passport-number-format-digits-types-and-location/
  *   https://travel.state.gov/content/travel/en/passports/passport-help/next-generation-passport.html
  *
  * PERSON

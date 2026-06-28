@@ -2,8 +2,12 @@
  * Afghan Passport Number (د تذکره افغانستان).
  *
  *
+ * Format: One uppercase letter followed by 8 digits (9 alphanumeric characters total). The leading letter is 'O' on older ordinary passports and 'P' on passports issued in Afghanistan since January 2018; consular offices may still issue 'O' versions.
+ *
  * Source
- *   passport number format for AF
+ *   https://www.consilium.europa.eu/prado/en/prado-documents/afg/a/docs-per-category.html
+ *   https://en.wikipedia.org/wiki/Afghan_passport
+ *   https://www.iom.int/news/afghanistan-roll-out-icao-compliant-machine-readable-passport-and-visas-citizens
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^\d{9}$/;
+const idRegexp = /^[A-Z]\d{8}$/;
 
 const impl: Validator = {
   name: 'Afghan Passport Number',

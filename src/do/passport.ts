@@ -2,8 +2,11 @@
  * Dominican Passport Number (Pasaporte dominicano).
  *
  *
+ * Format: Two uppercase letters (place-of-issue prefix such as SD, PP, SP, RD, TO) followed by seven digits; nine characters total.
+ *
  * Source
- *   Passport number format for DO
+ *   https://en.wikipedia.org/wiki/Dominican_Republic_passport
+ *   https://dr1.com/forums/threads/dominican-passport-numbers.396022/
  *
  * PERSON
  */
@@ -16,7 +19,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]{2}\d{6}$/;
+const idRegexp = /^[A-Z]{2}\d{7}$/;
 
 const impl: Validator = {
   name: 'Dominican Passport Number',

@@ -2,8 +2,12 @@
  * Danish Passport Number (Dansk pas).
  *
  *
+ * Format: Nine digits, no letters, no spaces or delimiters.
+ *
  * Source
- *   Passport number format for DK
+ *   https://learn.microsoft.com/en-us/purview/sit-defn-denmark-passport-number
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://github.com/validatorjs/validator.js/blob/master/src/lib/isPassportNumber.js
  *
  * PERSON
  */

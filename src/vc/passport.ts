@@ -2,8 +2,12 @@
  * Vincentian Passport Number (Saint Vincentian passport).
  *
  *
+ * Format: Two letters followed by eight digits (e.g. RA01234567), total 10 characters.
+ *
  * Source
- *   passport number format for VC
+ *   https://danskebank.fi/-/media/pdf/danske-bank/fi/en/national-identifier-list-final.pdf
+ *   https://en.wikipedia.org/wiki/Saint_Vincent_and_the_Grenadines_passport
+ *   https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/SaintVincentandtheGrenadines.html
  *
  * PERSON
  */
@@ -16,7 +20,7 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
   return strings.cleanUnicode(input, ' -./,');
 }
 
-const idRegexp = /^[A-Z]\d{6}$/;
+const idRegexp = /^[A-Z]{2}\d{8}$/;
 
 const impl: Validator = {
   name: 'Vincentian Passport Number',
