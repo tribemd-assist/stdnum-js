@@ -57,6 +57,7 @@ How you can help! This library currently support about half the countries in the
 | Bulgaria               | BG   | EGN             | Person             | ЕГН, Единен граждански номер, Bulgarian personal identity codes                                                                        |
 | Bulgaria               | BG   | PNF             | Person             | PNF (ЛНЧ, Личен номер на чужденец, Bulgarian number of a foreigner).                                                                   |
 | Bulgaria               | BG   | VAT             | Company            | Идентификационен номер по ДДС, Bulgarian VAT number                                                                                    |
+| Bolivia                | BO   | CI              | Person             | Person Identifier (Cédula de Identidad)                                                                                                |
 | Brazil                 | BR   | CPF             | Person             | Brazilian identity number (Cadastro de Pessoas Físicas)                                                                                |
 | Brazil                 | BR   | CNPJ            | Company            | Brazilian company number (Cadastro Nacional da Pessoa Jurídica)                                                                        |
 | Belarus                | BY   | UNP             | Person/Company     | Учетный номер плательщика, the Belarus VAT number                                                                                      |
@@ -68,7 +69,8 @@ How you can help! This library currently support about half the countries in the
 | Canada                 | CA   | SIN             | Person             | Person Identifier (Social Insurance Number)                                                                                            |
 | Cuba                   | CU   | NI              | Person             | Número de identidad, Cuban identity card numbers                                                                                       |
 | Cyprus                 | CY   | VAT             | Company            | Αριθμός Εγγραφής Φ.Π.Α. (Cypriot VAT number)                                                                                           |
-| Czech Republic         | CZ   | DIC             | Company            | Daňové identifikační číslo, Czech VAT number                                                                                           |
+| Czech Republic         | CZ   | DIC             | Vat                | Daňové identifikační číslo, Czech VAT number                                                                                           |
+| Czech Republic         | CZ   | ICO             | Company            | Identifikační číslo osoby, Czech Company Identification Number                                                                         |
 | Czech Republic         | CZ   | RC              | Person             | Rodné číslo, the Czech birth number                                                                                                    |
 | Swisserland            | CH   | SSN             | Person             | Swiss social security number ("Sozialversicherungsnummer")                                                                             |
 | Swisserland            | CH   | UID             | Company            | Unternehmens-Identifikationsnummer, Swiss business identifier                                                                          |
